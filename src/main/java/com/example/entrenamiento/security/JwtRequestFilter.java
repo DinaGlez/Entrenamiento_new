@@ -1,7 +1,10 @@
 package com.example.entrenamiento.security;
 
+import com.example.entrenamiento.EntrenamientoApplication;
 import com.example.entrenamiento.service.JwtUserDetailsService;
 import io.jsonwebtoken.ExpiredJwtException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -30,6 +33,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
             throws ServletException, IOException {
 
         final String requestTokenHeader = request.getHeader("Authorization");
+        final Logger LOGGER = LogManager.getLogger(EntrenamientoApplication.class);
 
         String username = null;
         String jwtToken = null;
@@ -41,10 +45,12 @@ public class JwtRequestFilter extends OncePerRequestFilter {
                 username = jwtTokenUtil.getUsernameFromToken(jwtToken);
             } catch (IllegalArgumentException e) {
                 //TODO: usar logs
-                System.out.println("Unable to get JWT Token");
+                LOGGER.error("Unable to get JWT Token");
+
             } catch (ExpiredJwtException e) {
                 //TODO: usar logs
-                System.out.println("JWT Token has expired");
+                LOGGER.error("JWT Token has expired");
+
             }
         } else {
             logger.warn("JWT Token does not begin with Bearer String");
@@ -57,9 +63,9 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 
             // if token is valid configure Spring Security to manually set
             // authentication
-            //TODO: usar  Boolean.TRUE.equals(jwtTokenUtil.validateToken(jwtToken, userDetails))  para evitar NPE
-            if (jwtTokenUtil.validateToken(jwtToken, userDetails)) {
-
+            //TODO: usar  Boolean.TRUE.equals(jwtTokenUtil.validateToken(jwtToken, userDetails))  para evitar NPE -->que es NPE???
+           // if (jwtTokenUtil.validateToken(jwtToken, userDetails)) {
+              if(Boolean.TRUE.equals(jwtTokenUtil.validateToken(jwtToken, userDetails))){
                 UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
                         userDetails, null, userDetails.getAuthorities());
                 usernamePasswordAuthenticationToken

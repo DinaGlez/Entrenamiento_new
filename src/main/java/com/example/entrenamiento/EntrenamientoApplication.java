@@ -17,9 +17,9 @@ public class EntrenamientoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(EntrenamientoApplication.class, args);
-		LOGGER.info("Info level log message");
+		/*LOGGER.info("Info level log message");
 		LOGGER.debug("Debug level log message");
-		LOGGER.error("Error level log message");
+		LOGGER.error("Error level log message");*/
 
 	}
 

@@ -1,13 +1,13 @@
 package com.example.entrenamiento.service;
 
-import com.example.entrenamiento.dao.ProductoDAO;
+import com.example.entrenamiento.repository.ProductoDAO;
 import com.example.entrenamiento.model.Producto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+
 @Service
 public class ProductoServiceImpl implements ProductoService {
  @Autowired

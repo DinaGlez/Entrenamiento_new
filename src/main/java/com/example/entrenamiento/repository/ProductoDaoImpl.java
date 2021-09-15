@@ -1,4 +1,4 @@
-package com.example.entrenamiento.dao;
+package com.example.entrenamiento.repository;
 
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.example.entrenamiento.dao;
+package com.example.entrenamiento.repository;
 
 import com.example.entrenamiento.model.Producto;
 import org.springframework.data.repository.CrudRepository;

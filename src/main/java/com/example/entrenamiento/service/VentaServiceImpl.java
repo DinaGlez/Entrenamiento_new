@@ -1,6 +1,6 @@
 package com.example.entrenamiento.service;
 
-import com.example.entrenamiento.dao.VentaDAO;
+import com.example.entrenamiento.repository.VentaDAO;
 import com.example.entrenamiento.model.Venta;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

@@ -1,4 +1,4 @@
-package com.example.entrenamiento.dao;
+package com.example.entrenamiento.repository;
 
 import com.example.entrenamiento.model.Cliente;
 import com.example.entrenamiento.model.Venta;
