@@ -13,7 +13,7 @@ public class ClienteController {
     @Autowired
     ClienteService clienteService;
 
-    @PostMapping("/test")
+    @PostMapping("/clientes")
     public void insertCliente( Cliente cliente) {
       clienteService.insertCliente(cliente);    }
 
