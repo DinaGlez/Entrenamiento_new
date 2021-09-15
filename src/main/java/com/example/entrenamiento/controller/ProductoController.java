@@ -21,9 +21,9 @@ ProductoService productoService;
 
         return productoService.getProductos();
     }
-    @PostMapping("/products/")
-    public void InsertProducto(Producto producto){
-        productoService.insertProducto(producto);
+    @PostMapping("/products")
+    public void InsertProducto(@RequestBody Producto producto){
+         productoService.insertProducto(producto);
     }
 
     @DeleteMapping("/products/{idproducto}")

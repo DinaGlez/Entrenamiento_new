@@ -3,9 +3,7 @@ package com.example.entrenamiento.controller;
 import com.example.entrenamiento.model.Cliente;
 import com.example.entrenamiento.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ClienteController {
@@ -14,7 +12,8 @@ public class ClienteController {
     ClienteService clienteService;
 
     @PostMapping("/clientes")
-    public void insertCliente( Cliente cliente) {
+    @ResponseBody
+    public void insertCliente(@RequestBody Cliente cliente) {
       clienteService.insertCliente(cliente);    }
 
 }
