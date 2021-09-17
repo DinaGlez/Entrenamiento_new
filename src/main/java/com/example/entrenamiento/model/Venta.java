@@ -13,7 +13,7 @@ import java.util.Date;
 
 public class Venta {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer inVenta;
 
     private Date fecha;

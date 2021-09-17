@@ -22,7 +22,7 @@ public class ClienteDAOImpl extends JdbcDaoSupport implements ClienteDAO{
     @Override
     public void insertCliente(Cliente cliente) {
         String sql = "INSERT INTO cliente " + "(idcliente,apellido, dni,email,nombre,telefono) VALUES (?, ?,?,?,?,?)";
-        getJdbcTemplate().update(sql, new Object[] { cliente.getIdcliente(),cliente.getApellido(), cliente.getDni(),cliente.getEmail(),cliente.getNombre(),cliente.getTelefono() });
+        getJdbcTemplate().update(sql, new Object[] {cliente.getIdcliente(), cliente.getApellido(), cliente.getDni(),cliente.getEmail(),cliente.getNombre(),cliente.getTelefono() });
 
     }
 }
