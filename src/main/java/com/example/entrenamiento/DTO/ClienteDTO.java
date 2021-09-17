@@ -1,4 +1,4 @@
-package com.example.entrenamiento.repository;
+package com.example.entrenamiento.DTO;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

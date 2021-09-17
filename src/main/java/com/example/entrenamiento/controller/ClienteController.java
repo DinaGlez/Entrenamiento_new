@@ -1,5 +1,6 @@
 package com.example.entrenamiento.controller;
 
+import com.example.entrenamiento.DTO.ClienteDTO;
 import com.example.entrenamiento.model.Cliente;
 import com.example.entrenamiento.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +13,7 @@ public class ClienteController {
     ClienteService clienteService;
 
     @PostMapping("/clientes")
-    @ResponseBody
-    public void insertCliente(@RequestBody Cliente cliente) {
-      clienteService.insertCliente(cliente);    }
+    public void insertCliente(@RequestBody ClienteDTO cliente) {
+      clienteService.AddCliente(cliente);    }
 
 }

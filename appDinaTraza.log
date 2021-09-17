@@ -2959,3 +2959,434 @@ Action:
 
 Consider defining a bean of type 'org.modelmapper.ModelMapper' in your configuration.
 
+2021-09-17 03:09:51.184  INFO dina-laptop --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.entrenamiento.EntrenamientoApplicationTests], using SpringBootContextLoader
+2021-09-17 03:09:51.201  INFO dina-laptop --- [           main] o.s.t.c.s.AbstractContextLoader          : Could not detect default resource locations for test class [com.example.entrenamiento.EntrenamientoApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2021-09-17 03:09:51.202  INFO dina-laptop --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.entrenamiento.EntrenamientoApplicationTests]: EntrenamientoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2021-09-17 03:09:51.347  INFO dina-laptop --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.entrenamiento.EntrenamientoApplication for test class com.example.entrenamiento.EntrenamientoApplicationTests
+2021-09-17 03:09:51.470  INFO dina-laptop --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener]
+2021-09-17 03:09:51.496  INFO dina-laptop --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@35293c05, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@620aa4ea, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@2db2dd9d, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3174cb09, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@4d411036, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7adbd080, org.springframework.test.context.transaction.TransactionalTestExecutionListener@41beb473, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@560513ce, org.springframework.test.context.event.EventPublishingTestExecutionListener@13006998, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@37fbe4a8, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@352c308, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@7d373bcf, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6d6bc158, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5dda6f9, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@10027fc9, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@54afd745, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@677dbd89]
+2021-09-17 03:09:51.997  INFO dina-laptop --- [           main] c.e.e.EntrenamientoApplicationTests      : Starting EntrenamientoApplicationTests using Java 16.0.2 on dina-laptop with PID 18308 (started by dini in D:\WORK\Entrenamiento\entrenamiento)
+2021-09-17 03:09:52.007  INFO dina-laptop --- [           main] c.e.e.EntrenamientoApplicationTests      : No active profile set, falling back to default profiles: default
+2021-09-17 03:09:53.193  INFO dina-laptop --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-17 03:09:53.314  INFO dina-laptop --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 102 ms. Found 1 JPA repository interfaces.
+2021-09-17 03:09:53.982  INFO dina-laptop --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3cd26422' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-09-17 03:09:54.005  INFO dina-laptop --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-09-17 03:09:54.228  INFO dina-laptop --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2021-09-17 03:09:54.553  INFO dina-laptop --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2021-09-17 03:09:54.843  INFO dina-laptop --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-17 03:09:54.999  INFO dina-laptop --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-17 03:09:55.254  INFO dina-laptop --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-17 03:09:59.671  INFO dina-laptop --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-09-17 03:10:00.768  INFO dina-laptop --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-09-17 03:10:00.782  INFO dina-laptop --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-09-17 03:10:00.841  INFO dina-laptop --- [           main] o.s.a.f.CglibAopProxy                    : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-09-17 03:10:00.963  WARN dina-laptop --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-09-17 03:10:01.679  WARN dina-laptop --- [           main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productoController': Unsatisfied dependency expressed through field 'productoService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productoServiceImpl': Unsatisfied dependency expressed through field 'modelMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.modelmapper.ModelMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2021-09-17 03:10:01.679  INFO dina-laptop --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-09-17 03:10:01.684  INFO dina-laptop --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2021-09-17 03:10:01.710  INFO dina-laptop --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2021-09-17 03:10:01.732  INFO dina-laptop --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-09-17 03:10:01.772 ERROR dina-laptop --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field modelMapper in com.example.entrenamiento.service.ProductoServiceImpl required a bean of type 'org.modelmapper.ModelMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.modelmapper.ModelMapper' in your configuration.
+
+2021-09-17 03:10:01.774 ERROR dina-laptop --- [           main] o.s.t.c.TestContextManager               : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@35293c05] to prepare test instance [com.example.entrenamiento.EntrenamientoApplicationTests@7fcbc336]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:350)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:355)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$7(ClassBasedTestDescriptor.java:350)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:349)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$4(ClassBasedTestDescriptor.java:270)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:269)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:259)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:258)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:101)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:100)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:65)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:111)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:111)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:79)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productoController': Unsatisfied dependency expressed through field 'productoService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productoServiceImpl': Unsatisfied dependency expressed through field 'modelMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.modelmapper.ModelMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1413)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:123)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
+	... 67 more
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productoServiceImpl': Unsatisfied dependency expressed through field 'modelMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.modelmapper.ModelMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1413)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
+	... 86 more
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.modelmapper.ModelMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1790)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1346)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
+	... 100 more
+2021-09-17 12:51:46.295  INFO dina-laptop --- [           main] c.e.e.EntrenamientoApplication           : Starting EntrenamientoApplication using Java 16.0.2 on dina-laptop with PID 17812 (D:\WORK\Entrenamiento\entrenamiento\target\classes started by dini in D:\WORK\Entrenamiento\entrenamiento)
+2021-09-17 12:51:46.306  INFO dina-laptop --- [           main] c.e.e.EntrenamientoApplication           : No active profile set, falling back to default profiles: default
+2021-09-17 12:51:47.099  INFO dina-laptop --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-17 12:51:47.174  INFO dina-laptop --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 1 JPA repository interfaces.
+2021-09-17 12:51:47.494  INFO dina-laptop --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@268cbb86' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-09-17 12:51:47.499  INFO dina-laptop --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-09-17 12:51:47.782  INFO dina-laptop --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2021-09-17 12:51:47.795  INFO dina-laptop --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2021-09-17 12:51:47.796  INFO dina-laptop --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2021-09-17 12:51:47.796  INFO dina-laptop --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-09-17 12:51:47.901  INFO dina-laptop --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-09-17 12:51:47.901  INFO dina-laptop --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1546 ms
+2021-09-17 12:51:48.017  INFO dina-laptop --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2021-09-17 12:51:48.201  INFO dina-laptop --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2021-09-17 12:51:48.314  INFO dina-laptop --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-17 12:51:48.412  INFO dina-laptop --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-17 12:51:48.612  INFO dina-laptop --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-17 12:51:48.745  INFO dina-laptop --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-09-17 12:51:49.512  INFO dina-laptop --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-09-17 12:51:49.522  INFO dina-laptop --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-09-17 12:51:49.541  INFO dina-laptop --- [           main] o.s.a.f.CglibAopProxy                    : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-09-17 12:51:49.596  WARN dina-laptop --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-09-17 12:51:49.924  INFO dina-laptop --- [           main] o.s.a.f.CglibAopProxy                    : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-09-17 12:51:50.047  INFO dina-laptop --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7fb5368e, org.springframework.security.web.context.SecurityContextPersistenceFilter@349996a6, org.springframework.security.web.header.HeaderWriterFilter@568c9ee1, org.springframework.security.web.authentication.logout.LogoutFilter@4a18e0f1, com.example.entrenamiento.security.JwtRequestFilter@78cfa264, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@67292fc7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@e27d97b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5847010, org.springframework.security.web.session.SessionManagementFilter@1041ebba, org.springframework.security.web.access.ExceptionTranslationFilter@14d53884, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6f4029e9]
+2021-09-17 12:51:50.496  INFO dina-laptop --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2021-09-17 12:51:50.550  INFO dina-laptop --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2021-09-17 12:51:50.565  INFO dina-laptop --- [           main] c.e.e.EntrenamientoApplication           : Started EntrenamientoApplication in 4.646 seconds (JVM running for 10.654)
+2021-09-17 13:04:42.696  INFO dina-laptop --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-09-17 13:04:42.701  INFO dina-laptop --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2021-09-17 13:04:42.712  INFO dina-laptop --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2021-09-17 13:33:28.797  INFO dina-laptop --- [           main] c.e.e.EntrenamientoApplication           : Starting EntrenamientoApplication using Java 16.0.2 on dina-laptop with PID 17640 (D:\WORK\Entrenamiento\entrenamiento\target\classes started by dini in D:\WORK\Entrenamiento\entrenamiento)
+2021-09-17 13:33:28.806  INFO dina-laptop --- [           main] c.e.e.EntrenamientoApplication           : No active profile set, falling back to default profiles: default
+2021-09-17 13:33:29.465  INFO dina-laptop --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-17 13:33:29.524  INFO dina-laptop --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 1 JPA repository interfaces.
+2021-09-17 13:33:29.826  INFO dina-laptop --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7f5538a1' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-09-17 13:33:29.830  INFO dina-laptop --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-09-17 13:33:30.061  INFO dina-laptop --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2021-09-17 13:33:30.070  INFO dina-laptop --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2021-09-17 13:33:30.071  INFO dina-laptop --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2021-09-17 13:33:30.071  INFO dina-laptop --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-09-17 13:33:30.172  INFO dina-laptop --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-09-17 13:33:30.172  INFO dina-laptop --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1327 ms
+2021-09-17 13:33:30.287  INFO dina-laptop --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2021-09-17 13:33:30.443  INFO dina-laptop --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2021-09-17 13:33:30.540  INFO dina-laptop --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-17 13:33:30.609  INFO dina-laptop --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-17 13:33:30.746  INFO dina-laptop --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-17 13:33:30.849  INFO dina-laptop --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-09-17 13:33:31.492  INFO dina-laptop --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-09-17 13:33:31.504  INFO dina-laptop --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-09-17 13:33:31.523  INFO dina-laptop --- [           main] o.s.a.f.CglibAopProxy                    : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-09-17 13:33:31.578  WARN dina-laptop --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-09-17 13:33:31.893  INFO dina-laptop --- [           main] o.s.a.f.CglibAopProxy                    : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-09-17 13:33:31.993  INFO dina-laptop --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@16890f00, org.springframework.security.web.context.SecurityContextPersistenceFilter@73dd0f23, org.springframework.security.web.header.HeaderWriterFilter@1041ebba, org.springframework.security.web.authentication.logout.LogoutFilter@35f6f105, com.example.entrenamiento.security.JwtRequestFilter@6b6eae52, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@579ce2e9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5b32e0b1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@77e1dacd, org.springframework.security.web.session.SessionManagementFilter@4e343265, org.springframework.security.web.access.ExceptionTranslationFilter@33827b88, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@58a7ca42]
+2021-09-17 13:33:32.384  INFO dina-laptop --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2021-09-17 13:33:32.419  INFO dina-laptop --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2021-09-17 13:33:32.428  INFO dina-laptop --- [           main] c.e.e.EntrenamientoApplication           : Started EntrenamientoApplication in 3.958 seconds (JVM running for 8.216)
+2021-09-17 13:33:37.562  INFO dina-laptop --- [nio-8080-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-17 13:33:37.562  INFO dina-laptop --- [nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2021-09-17 13:33:37.563  INFO dina-laptop --- [nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 1 ms
+2021-09-17 13:33:37.580  WARN dina-laptop --- [nio-8080-exec-1] c.e.e.s.JwtRequestFilter                 : JWT Token does not begin with Bearer String
+2021-09-17 13:34:58.114 ERROR dina-laptop --- [nio-8080-exec-4] c.e.e.EntrenamientoApplication           : JWT Token has expired
+2021-09-17 13:35:21.548 ERROR dina-laptop --- [nio-8080-exec-6] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.http.converter.HttpMessageConversionException: Type definition error: [simple type, class com.example.entrenamiento.DTO.ProductoDTO]; nested exception is com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer found for class com.example.entrenamiento.DTO.ProductoDTO and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: java.util.ArrayList[0])] with root cause
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer found for class com.example.entrenamiento.DTO.ProductoDTO and no properties discovered to create BeanSerializer (to avoid exception, disable SerializationFeature.FAIL_ON_EMPTY_BEANS) (through reference chain: java.util.ArrayList[0])
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:77)
+	at com.fasterxml.jackson.databind.SerializerProvider.reportBadDefinition(SerializerProvider.java:1276)
+	at com.fasterxml.jackson.databind.DatabindContext.reportBadDefinition(DatabindContext.java:400)
+	at com.fasterxml.jackson.databind.ser.impl.UnknownSerializer.failForEmpty(UnknownSerializer.java:71)
+	at com.fasterxml.jackson.databind.ser.impl.UnknownSerializer.serialize(UnknownSerializer.java:33)
+	at com.fasterxml.jackson.databind.ser.std.CollectionSerializer.serializeContents(CollectionSerializer.java:145)
+	at com.fasterxml.jackson.databind.ser.std.CollectionSerializer.serialize(CollectionSerializer.java:107)
+	at com.fasterxml.jackson.databind.ser.std.CollectionSerializer.serialize(CollectionSerializer.java:25)
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider._serialize(DefaultSerializerProvider.java:480)
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider.serializeValue(DefaultSerializerProvider.java:400)
+	at com.fasterxml.jackson.databind.ObjectWriter$Prefetch.serialize(ObjectWriter.java:1510)
+	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:1006)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:454)
+	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:290)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.handleReturnValue(RequestResponseBodyMethodProcessor.java:183)
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:78)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:124)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1064)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:121)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:115)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at com.example.entrenamiento.security.JwtRequestFilter.doFilterInternal(JwtRequestFilter.java:79)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2021-09-17 13:41:14.334  INFO dina-laptop --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-09-17 13:41:14.336  INFO dina-laptop --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2021-09-17 13:41:14.345  INFO dina-laptop --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2021-09-17 13:41:25.251  INFO dina-laptop --- [           main] c.e.e.EntrenamientoApplication           : Starting EntrenamientoApplication using Java 16.0.2 on dina-laptop with PID 23008 (D:\WORK\Entrenamiento\entrenamiento\target\classes started by dini in D:\WORK\Entrenamiento\entrenamiento)
+2021-09-17 13:41:25.260  INFO dina-laptop --- [           main] c.e.e.EntrenamientoApplication           : No active profile set, falling back to default profiles: default
+2021-09-17 13:41:25.903  INFO dina-laptop --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-17 13:41:25.962  INFO dina-laptop --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 1 JPA repository interfaces.
+2021-09-17 13:41:26.236  INFO dina-laptop --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7f5538a1' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-09-17 13:41:26.240  INFO dina-laptop --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-09-17 13:41:26.474  INFO dina-laptop --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2021-09-17 13:41:26.482  INFO dina-laptop --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2021-09-17 13:41:26.483  INFO dina-laptop --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2021-09-17 13:41:26.484  INFO dina-laptop --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-09-17 13:41:26.597  INFO dina-laptop --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-09-17 13:41:26.597  INFO dina-laptop --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1294 ms
+2021-09-17 13:41:26.697  INFO dina-laptop --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2021-09-17 13:41:26.838  INFO dina-laptop --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2021-09-17 13:41:26.926  INFO dina-laptop --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-17 13:41:26.992  INFO dina-laptop --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-17 13:41:27.150  INFO dina-laptop --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-17 13:41:27.244  INFO dina-laptop --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-09-17 13:41:27.851  INFO dina-laptop --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-09-17 13:41:27.859  INFO dina-laptop --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-09-17 13:41:27.879  INFO dina-laptop --- [           main] o.s.a.f.CglibAopProxy                    : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-09-17 13:41:27.932  WARN dina-laptop --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-09-17 13:41:28.226  INFO dina-laptop --- [           main] o.s.a.f.CglibAopProxy                    : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-09-17 13:41:28.322  INFO dina-laptop --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@16890f00, org.springframework.security.web.context.SecurityContextPersistenceFilter@73dd0f23, org.springframework.security.web.header.HeaderWriterFilter@349996a6, org.springframework.security.web.authentication.logout.LogoutFilter@35f6f105, com.example.entrenamiento.security.JwtRequestFilter@6b6eae52, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@579ce2e9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5b32e0b1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@77e1dacd, org.springframework.security.web.session.SessionManagementFilter@4e343265, org.springframework.security.web.access.ExceptionTranslationFilter@7112b21a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@eebd983]
+2021-09-17 13:41:28.679  INFO dina-laptop --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2021-09-17 13:41:28.720  INFO dina-laptop --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2021-09-17 13:41:28.733  INFO dina-laptop --- [           main] c.e.e.EntrenamientoApplication           : Started EntrenamientoApplication in 3.804 seconds (JVM running for 9.374)
+2021-09-17 13:41:37.236  INFO dina-laptop --- [nio-8080-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-17 13:41:37.236  INFO dina-laptop --- [nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2021-09-17 13:41:37.237  INFO dina-laptop --- [nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 1 ms
+2021-09-17 13:51:26.391  INFO dina-laptop --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-09-17 13:51:26.393  INFO dina-laptop --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2021-09-17 13:51:26.404  INFO dina-laptop --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2021-09-17 13:51:37.323  INFO dina-laptop --- [           main] c.e.e.EntrenamientoApplication           : Starting EntrenamientoApplication using Java 16.0.2 on dina-laptop with PID 4752 (D:\WORK\Entrenamiento\entrenamiento\target\classes started by dini in D:\WORK\Entrenamiento\entrenamiento)
+2021-09-17 13:51:37.332  INFO dina-laptop --- [           main] c.e.e.EntrenamientoApplication           : No active profile set, falling back to default profiles: default
+2021-09-17 13:51:37.991  INFO dina-laptop --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-17 13:51:38.051  INFO dina-laptop --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 1 JPA repository interfaces.
+2021-09-17 13:51:38.347  INFO dina-laptop --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7f5538a1' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-09-17 13:51:38.351  INFO dina-laptop --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-09-17 13:51:38.615  INFO dina-laptop --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2021-09-17 13:51:38.624  INFO dina-laptop --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2021-09-17 13:51:38.625  INFO dina-laptop --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2021-09-17 13:51:38.626  INFO dina-laptop --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-09-17 13:51:38.727  INFO dina-laptop --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-09-17 13:51:38.728  INFO dina-laptop --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1355 ms
+2021-09-17 13:51:38.826  INFO dina-laptop --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2021-09-17 13:51:38.972  INFO dina-laptop --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2021-09-17 13:51:39.061  INFO dina-laptop --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-17 13:51:39.117  INFO dina-laptop --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-17 13:51:39.266  INFO dina-laptop --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-17 13:51:39.370  INFO dina-laptop --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-09-17 13:51:39.996  INFO dina-laptop --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-09-17 13:51:40.005  INFO dina-laptop --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-09-17 13:51:40.024  INFO dina-laptop --- [           main] o.s.a.f.CglibAopProxy                    : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-09-17 13:51:40.081  WARN dina-laptop --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-09-17 13:51:40.383  INFO dina-laptop --- [           main] o.s.a.f.CglibAopProxy                    : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-09-17 13:51:40.478  INFO dina-laptop --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@16890f00, org.springframework.security.web.context.SecurityContextPersistenceFilter@73dd0f23, org.springframework.security.web.header.HeaderWriterFilter@349996a6, org.springframework.security.web.authentication.logout.LogoutFilter@35f6f105, com.example.entrenamiento.security.JwtRequestFilter@6b6eae52, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@579ce2e9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5b32e0b1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@77e1dacd, org.springframework.security.web.session.SessionManagementFilter@4e343265, org.springframework.security.web.access.ExceptionTranslationFilter@7112b21a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@58a7ca42]
+2021-09-17 13:51:40.848  INFO dina-laptop --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2021-09-17 13:51:40.886  INFO dina-laptop --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2021-09-17 13:51:40.896  INFO dina-laptop --- [           main] c.e.e.EntrenamientoApplication           : Started EntrenamientoApplication in 3.9 seconds (JVM running for 7.194)
+2021-09-17 13:52:33.172  INFO dina-laptop --- [nio-8080-exec-2] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-17 13:52:33.173  INFO dina-laptop --- [nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2021-09-17 13:52:33.174  INFO dina-laptop --- [nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Completed initialization in 1 ms
+2021-09-17 14:09:39.696  INFO dina-laptop --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-09-17 14:09:39.698  INFO dina-laptop --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2021-09-17 14:09:39.711  INFO dina-laptop --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2021-09-17 14:14:51.697  INFO dina-laptop --- [           main] c.e.e.EntrenamientoApplication           : Starting EntrenamientoApplication using Java 16.0.2 on dina-laptop with PID 21036 (D:\WORK\Entrenamiento\entrenamiento\target\classes started by dini in D:\WORK\Entrenamiento\entrenamiento)
+2021-09-17 14:14:51.705  INFO dina-laptop --- [           main] c.e.e.EntrenamientoApplication           : No active profile set, falling back to default profiles: default
+2021-09-17 14:14:52.422  INFO dina-laptop --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-17 14:14:52.494  INFO dina-laptop --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 1 JPA repository interfaces.
+2021-09-17 14:14:52.787  INFO dina-laptop --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@ae2db25' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-09-17 14:14:52.791  INFO dina-laptop --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-09-17 14:14:53.035  INFO dina-laptop --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2021-09-17 14:14:53.044  INFO dina-laptop --- [           main] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2021-09-17 14:14:53.045  INFO dina-laptop --- [           main] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2021-09-17 14:14:53.046  INFO dina-laptop --- [           main] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-09-17 14:14:53.162  INFO dina-laptop --- [           main] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2021-09-17 14:14:53.163  INFO dina-laptop --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1418 ms
+2021-09-17 14:14:53.278  INFO dina-laptop --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2021-09-17 14:14:53.432  INFO dina-laptop --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2021-09-17 14:14:53.520  INFO dina-laptop --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-17 14:14:53.579  INFO dina-laptop --- [           main] o.h.Version                              : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-17 14:14:53.746  INFO dina-laptop --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-17 14:14:53.846  INFO dina-laptop --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-09-17 14:14:54.499  INFO dina-laptop --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-09-17 14:14:54.510  INFO dina-laptop --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-09-17 14:14:54.528  INFO dina-laptop --- [           main] o.s.a.f.CglibAopProxy                    : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-09-17 14:14:54.619  WARN dina-laptop --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-09-17 14:14:54.895  INFO dina-laptop --- [           main] o.s.a.f.CglibAopProxy                    : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2021-09-17 14:14:54.995  INFO dina-laptop --- [           main] o.s.s.w.DefaultSecurityFilterChain       : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@36885319, org.springframework.security.web.context.SecurityContextPersistenceFilter@24731caf, org.springframework.security.web.header.HeaderWriterFilter@624494d4, org.springframework.security.web.authentication.logout.LogoutFilter@6eadd342, com.example.entrenamiento.security.JwtRequestFilter@2582b0ef, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@486dd616, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1b800a11, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@62a81453, org.springframework.security.web.session.SessionManagementFilter@1c7744c1, org.springframework.security.web.access.ExceptionTranslationFilter@614361fa, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@cda144a]
+2021-09-17 14:14:55.394  INFO dina-laptop --- [           main] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2021-09-17 14:14:55.431  INFO dina-laptop --- [           main] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2021-09-17 14:14:55.441  INFO dina-laptop --- [           main] c.e.e.EntrenamientoApplication           : Started EntrenamientoApplication in 4.095 seconds (JVM running for 9.725)
+2021-09-17 14:15:24.719  INFO dina-laptop --- [nio-8080-exec-2] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-09-17 14:15:24.719  INFO dina-laptop --- [nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2021-09-17 14:15:24.721  INFO dina-laptop --- [nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Completed initialization in 2 ms
+2021-09-17 14:15:49.951  WARN dina-laptop --- [nio-8080-exec-4] c.e.e.s.JwtRequestFilter                 : JWT Token does not begin with Bearer String
+2021-09-17 14:16:05.556 ERROR dina-laptop --- [nio-8080-exec-5] c.e.e.EntrenamientoApplication           : JWT Token has expired
+2021-09-17 14:16:44.735  WARN dina-laptop --- [nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2021-09-17 14:17:28.556 ERROR dina-laptop --- [nio-8080-exec-8] c.e.e.EntrenamientoApplication           : JWT Token has expired

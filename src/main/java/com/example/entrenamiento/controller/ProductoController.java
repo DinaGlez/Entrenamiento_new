@@ -1,6 +1,7 @@
 package com.example.entrenamiento.controller;
 
 import com.example.entrenamiento.model.Producto;
+import com.example.entrenamiento.DTO.ProductoDTO;
 import com.example.entrenamiento.service.ProductoService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,13 +18,13 @@ ProductoService productoService;
     private static final Logger LOG = LogManager.getLogger(ProductoController.class);
 
     @GetMapping("/products")
-    public List<Producto> getAll(){
+    public List<ProductoDTO> getAll(){
 
         return productoService.getProductos();
     }
     @PostMapping("/products")
-    public void InsertProducto(@RequestBody Producto producto){
-         productoService.insertProducto(producto);
+    public void AddProducto(@RequestBody ProductoDTO producto){
+         productoService.AddProducto(producto);
     }
 
     @DeleteMapping("/products/{idproducto}")

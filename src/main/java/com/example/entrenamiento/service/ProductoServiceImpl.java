@@ -2,14 +2,16 @@ package com.example.entrenamiento.service;
 
 import com.example.entrenamiento.repository.ProductoDAO;
 import com.example.entrenamiento.model.Producto;
-import com.example.entrenamiento.repository.ProductoDTO;
+import com.example.entrenamiento.DTO.ProductoDTO;
+import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.ArrayList;
+
 import java.util.List;
-import org.modelmapper.*;
+import java.util.stream.Collectors;
+
 @Service
 public class ProductoServiceImpl implements ProductoService {
     @Autowired
@@ -23,6 +25,14 @@ public class ProductoServiceImpl implements ProductoService {
     }
 
     @Override
+    public void AddProducto(ProductoDTO productoDTO) {
+        Producto producto = new ModelMapper().map(productoDTO, Producto.class);
+        productoDAO.save(producto);
+
+    }
+
+
+    @Override
     public void deleteProducto(int idproducto) {
         productoDAO.deleteById(idproducto);
     }
@@ -34,12 +44,18 @@ public class ProductoServiceImpl implements ProductoService {
     }
 
     @Override
-    public List<Producto> getProductos() {
-        List<Producto> productos = new ArrayList<>();
+    /*public List<Producto> getProductos() {
+        List<ProductoDTO> productos = new ArrayList<>();
         productoDAO.findAll().forEach(productos::add);
         return productos;
+    }*/
+    public List<ProductoDTO> getProductos() {
+        return ((List<Producto>) productoDAO
+                .findAll())
+                .stream()
+                .map(this::convertToProductoDTO)
+                .collect(Collectors.toList());
     }
-
     @Override
     public void updateProducto(Producto producto) {
         productoDAO.save(producto);
