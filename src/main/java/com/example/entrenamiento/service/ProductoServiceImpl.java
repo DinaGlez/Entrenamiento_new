@@ -21,11 +21,6 @@ public class ProductoServiceImpl implements ProductoService {
     private ModelMapper modelMapper;
 
     @Override
-    public void insertProducto(Producto producto) {
-        productoDAO.save(producto);
-    }
-
-    @Override
     public void AddProducto(ProductoDTO productoDTO) {
         Producto producto = new ModelMapper().map(productoDTO, Producto.class);
         productoDAO.save(producto);
@@ -39,18 +34,12 @@ public class ProductoServiceImpl implements ProductoService {
     }
 
     @Override
-    public Producto getProducto(int idproducto) {
-        ;
-        return null;
+    public ProductoDTO getProductoById(int idproducto) {
+        return convertToProductoDTO(productoDAO.findById(idproducto).get());
     }
 
     @Override
-    /*public List<Producto> getProductos() {
-        List<ProductoDTO> productos = new ArrayList<>();
-        productoDAO.findAll().forEach(productos::add);
-        return productos;
-    }*/
-    public List<ProductoDTO> getProductos() {
+        public List<ProductoDTO> getProductos() {
         return ((List<Producto>) productoDAO
                 .findAll())
                 .stream()
@@ -58,8 +47,14 @@ public class ProductoServiceImpl implements ProductoService {
                 .collect(Collectors.toList());
     }
     @Override
-    public void updateProducto(int idproducto,Producto producto) {
-        productoDAO.save(producto);
+    public void updateProducto(int idproducto,ProductoDTO producto) {
+        Producto prod = productoDAO.findById(idproducto).get();
+        prod.setNombre(producto.getNombre());
+        prod.setPrecio(producto.getPrecio());
+        Producto productodto = new ModelMapper().map(prod, Producto.class);
+
+        productoDAO.save(productodto);
+
 
     }
 

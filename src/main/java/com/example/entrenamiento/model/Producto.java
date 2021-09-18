@@ -1,18 +1,16 @@
 package com.example.entrenamiento.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor // <--- THIS is it
-
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Producto {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)

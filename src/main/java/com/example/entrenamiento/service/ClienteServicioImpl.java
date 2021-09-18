@@ -35,10 +35,6 @@ public class ClienteServicioImpl implements ClienteService {
     }
 
     @Override
-    public void insertCliente(Cliente cliente) {
-           clienteDAO.save(cliente);
-    }
-
     public void AddCliente(ClienteDTO clienteDTO) {
         Cliente cliente = new ModelMapper().map(clienteDTO, Cliente.class);
         clienteDAO.save(cliente);
@@ -54,6 +50,34 @@ public class ClienteServicioImpl implements ClienteService {
                 .collect(Collectors.toList());
 
 
+    }
+
+    @Override
+    public void updateCliente(int id, ClienteDTO cliente) {
+        Cliente cli = clienteDAO.findById(id).get();
+        cli.setNombre(cliente.getNombre());
+        cli.setApellido(cliente.getApellido());
+        cli.setDni(cliente.getDni());
+        cli.setTelefono(cliente.getTelefono());
+        cli.setEmail(cliente.getEmail());
+
+        Cliente clienteDTO = new ModelMapper().map(cli, Cliente.class);
+
+        clienteDAO.save(clienteDTO);
+
+    }
+
+    @Override
+    public ClienteDTO getClienteById(int idcliente) {
+        ClienteDTO clienteDTO = new ModelMapper().map(clienteDAO.findById(idcliente).get(), ClienteDTO.class);
+
+        return clienteDTO;
+
+    }
+
+    @Override
+    public void deletecliente(int idcliente) {
+        clienteDAO.deleteById(idcliente);
     }
 
     private ClienteDTO convertToCLienteDTO2(Cliente cliente) {
