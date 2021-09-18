@@ -18,7 +18,11 @@ public class ProductoController {
 ProductoService productoService;
 
     private static final Logger LOG = LogManager.getLogger(ProductoController.class);
+    @GetMapping("/")
+    public String Starting(){
 
+        return "Just starting";
+    }
     @GetMapping("/products")
     public List<ProductoDTO> getAll(){
 
