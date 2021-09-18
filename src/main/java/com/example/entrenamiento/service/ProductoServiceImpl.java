@@ -8,6 +8,7 @@ import org.modelmapper.convention.MatchingStrategies;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -57,7 +58,7 @@ public class ProductoServiceImpl implements ProductoService {
                 .collect(Collectors.toList());
     }
     @Override
-    public void updateProducto(Producto producto) {
+    public void updateProducto(int idproducto,Producto producto) {
         productoDAO.save(producto);
 
     }

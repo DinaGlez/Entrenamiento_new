@@ -14,7 +14,7 @@ import java.util.Date;
 public class DetalleVenta {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer inDetalleVenta;
 
 
@@ -24,7 +24,7 @@ public class DetalleVenta {
 
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "idcliente", nullable = false)
-    private Cliente cliente;
+    @JoinColumn(name = "idProducto", nullable = false)
+    private Producto Producto;
 
 }

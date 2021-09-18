@@ -14,7 +14,7 @@ import java.util.Date;
 public class Venta {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Integer inVenta;
+    private Integer idventa;
 
     private Date fecha;
 
@@ -26,7 +26,7 @@ public class Venta {
 
     @Override
     public String toString() {
-        return "Venta [Identificador=" + inVenta + ", fecha=" + fecha + ", cliente="+cliente.getNombre() + cliente.getApellido()+"]";
+        return "Venta [Identificador=" + idventa + ", fecha=" + fecha + ", cliente="+cliente.getNombre() + cliente.getApellido()+"]";
     }
 
 }

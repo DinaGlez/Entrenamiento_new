@@ -1,5 +1,6 @@
 package com.example.entrenamiento.controller;
 
+import com.example.entrenamiento.DTO.VentaDTO;
 import com.example.entrenamiento.model.Producto;
 import com.example.entrenamiento.model.Venta;
 import com.example.entrenamiento.service.VentaService;
@@ -18,12 +19,12 @@ public class VentaController {
 
 
     @GetMapping("/ventas")
-    public List<Venta> getAll(){
+    public List<VentaDTO> getAll(){
 
-        return ventaService.GetVentas();
+        return ventaService.getVentas();
     }
-    @PostMapping("/ventas/")
-    public void InsertProducto(Venta venta){
+    @PostMapping("/ventas")
+    public void InsertVenta(VentaDTO venta){
         ventaService.insertVenta(venta);
     }
 

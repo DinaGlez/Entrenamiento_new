@@ -27,8 +27,8 @@ ProductoService productoService;
          productoService.AddProducto(producto);
     }
 
-    @DeleteMapping("/products/{idproducto}")
-   public  void DeleteProducto(@PathVariable ( "idproducto") int idproducto){
+   @DeleteMapping("/products/{idproducto}")
+   public  void DeleteProducto(@PathVariable int idproducto){
     productoService.deleteProducto(idproducto);
     }
 }
