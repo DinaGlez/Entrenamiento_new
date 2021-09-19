@@ -1,8 +1,6 @@
 package com.example.entrenamiento.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -11,7 +9,7 @@ import java.util.Date;
 @Getter
 @Setter
 @NoArgsConstructor // <--- THIS is it
-
+@AllArgsConstructor
 public class Venta {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)

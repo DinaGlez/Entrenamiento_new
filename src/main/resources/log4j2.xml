@@ -11,7 +11,7 @@
                 <Pattern>${LOG_PATTERN}</Pattern>
             </PatternLayout>
         </Console>
-        <File name="FileAppender" fileName="appDinaTraza.log">
+        <File name="FileAppender" fileName="appTraza.log">
             <PatternLayout>
                 <Pattern>${LOG_PATTERN}</Pattern>
             </PatternLayout>

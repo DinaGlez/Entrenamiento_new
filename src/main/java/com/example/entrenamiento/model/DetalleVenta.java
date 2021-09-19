@@ -1,21 +1,20 @@
 package com.example.entrenamiento.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
 @Entity
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor // <--- THIS is it
-
+@AllArgsConstructor
 public class DetalleVenta {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Integer inDetalleVenta;
+    private Integer idDetalleVenta;
 
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

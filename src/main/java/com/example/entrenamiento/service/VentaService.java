@@ -9,4 +9,5 @@ public interface VentaService {
     void insertVenta(Venta venta);
     //void addProductoVenta(int idproducto,int venta);
     List<VentaDTO> getVentas();
+    Venta GetVentaById(int idventa);
 }

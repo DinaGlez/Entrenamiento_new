@@ -18,26 +18,32 @@ import java.util.stream.Collectors;
 
 @Component
 public class VentaServiceImpl implements VentaService {
- @Autowired
- VentaDAO ventaDAO;
+    @Autowired
+    VentaDAO ventaDAO;
     @Autowired
     private ModelMapper modelMapper;
+
     @Override
-    public void insertVenta(Venta ventaDto) {
-       // Venta venta = new ModelMapper().map(ventaDto, Venta.class);
-        ventaDAO.save(ventaDto);
+    public void insertVenta(Venta venta) {
+        // Venta venta = new ModelMapper().map(ventaDto, Venta.class);
+        ventaDAO.save(venta);
     }
 
 
-
     @Override
-      public List<VentaDTO> getVentas() {
+    public List<VentaDTO> getVentas() {
         return ((List<Venta>) ventaDAO
                 .findAll())
                 .stream()
                 .map(this::convertToVentaDTO)
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public Venta GetVentaById(int idventa) {
+       return ventaDAO.findById(idventa).get();
+    }
+
 
 
     private VentaDTO convertToVentaDTO(Venta venta) {

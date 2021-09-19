@@ -13252,3 +13252,10 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 'carritocompra.venta' doesn't
 2021-09-19 09:03:30.150  INFO dina-laptop --- [nio-8080-exec-2] o.s.w.s.DispatcherServlet                : Completed initialization in 0 ms
 2021-09-19 09:03:42.428  WARN dina-laptop --- [nio-8080-exec-4] o.h.e.j.s.SqlExceptionHelper             : SQL Error: 1048, SQLState: 23000
 2021-09-19 09:03:42.428 ERROR dina-laptop --- [nio-8080-exec-4] o.h.e.j.s.SqlExceptionHelper             : Column 'idcliente' cannot be null
+2021-09-19 13:01:48.241  WARN dina-laptop --- [l-1 housekeeper] c.z.h.p.HikariPool                       : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h38m17s437ms280µs100ns).
+2021-09-19 15:16:52.699  WARN dina-laptop --- [l-1 housekeeper] c.z.h.p.HikariPool                       : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h3m43s540ms258µs200ns).
+2021-09-19 16:21:00.927  WARN dina-laptop --- [l-1 housekeeper] c.z.h.p.HikariPool                       : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=36m47s514ms153µs800ns).
+2021-09-19 16:43:56.117  INFO dina-laptop --- [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-09-19 16:43:56.118  INFO dina-laptop --- [ionShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-09-19 16:43:56.629  INFO dina-laptop --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2021-09-19 16:43:56.633  INFO dina-laptop --- [ionShutdownHook] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
