@@ -13,6 +13,8 @@ Ejemplo: curl --header "Content-Type: application/json"   --request POST   --dat
 3. POST products (inserta producto pasar objeto producto)
 4. DELETE products (elimina producto pasando id de tipo int)
 5. PUT products/{idproducto} (modifica un producto)
+
+
 **Cliente**:
 1. GET clientes (lista los clientes registrados)
 2. GET clientes/{idclientes} (muestra clientes por id)
