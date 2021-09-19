@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 
@@ -18,9 +20,14 @@ import java.io.Serializable;
         @Id
         @GeneratedValue(strategy=GenerationType.IDENTITY)
         private Integer idcliente;
-
+        @NotNull
+        @NotEmpty
         private String nombre;
+        @NotNull
+        @NotEmpty
         private String apellido;
+        @NotNull
+        @NotEmpty
         private String dni;
         private int telefono;
 

@@ -30,14 +30,14 @@ public class ProductRepositoryTest {
     public void saveProductTest(){
 
         Producto producto = com.example.entrenamiento.model.Producto.builder()
-                .nombre("Pollo")
-                .idproducto(1)
-                .precio(2)
+                .nombre("Mayonesa")
+               //.idproducto(10)
+                .precio((float)2.2)
                 .build();
 
         productoDAO.save(producto);
 
-        Assertions.assertThat(producto.getIdproducto()).isGreaterThan(0);
+        Assertions.assertThat(producto.getIdproducto()).isNotNull();
     }
 
 
@@ -53,9 +53,9 @@ public class ProductRepositoryTest {
 
     @Test
     @Order(3)
-    public void getListOfEmployeesTest(){
+    public void getAllProductosTest(){
 
-        List<Producto> productos = productoDAO.findAll();
+        List<Producto> productos = (List<Producto>) productoDAO.findAll();
 
         Assertions.assertThat(productos.size()).isGreaterThan(0);
 

@@ -13,9 +13,11 @@ import java.util.List;
 @NoArgsConstructor
 public class VentaDTO {
 
-    private String nombreCliente;
-    private String apellidoCliente;
+    private int idventa;
     private Date fecha;
+    private int idcliente;
+
+
 
 
 }

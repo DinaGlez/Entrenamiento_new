@@ -23,9 +23,9 @@ public class VentaServiceImpl implements VentaService {
     @Autowired
     private ModelMapper modelMapper;
     @Override
-    public void insertVenta(VentaDTO ventaDto) {
-        Venta venta = new ModelMapper().map(ventaDto, Venta.class);
-        ventaDAO.save(venta);
+    public void insertVenta(Venta ventaDto) {
+       // Venta venta = new ModelMapper().map(ventaDto, Venta.class);
+        ventaDAO.save(ventaDto);
     }
 
 

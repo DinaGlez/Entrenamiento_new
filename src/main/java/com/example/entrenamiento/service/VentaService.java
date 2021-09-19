@@ -6,7 +6,7 @@ import com.example.entrenamiento.model.Venta;
 
 import java.util.List;
 public interface VentaService {
-    void insertVenta(VentaDTO venta);
+    void insertVenta(Venta venta);
     //void addProductoVenta(int idproducto,int venta);
     List<VentaDTO> getVentas();
 }

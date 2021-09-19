@@ -1,5 +1,6 @@
 package com.example.entrenamiento.controller;
 
+import com.example.entrenamiento.apierror.EntityNotFoundException;
 import com.example.entrenamiento.model.Producto;
 import com.example.entrenamiento.DTO.ProductoDTO;
 import com.example.entrenamiento.service.ProductoService;
@@ -24,12 +25,12 @@ ProductoService productoService;
         return "Just starting";
     }
     @GetMapping("/products")
-    public List<ProductoDTO> getAll(){
+    public List<ProductoDTO> getAll() throws EntityNotFoundException {
 
         return productoService.getProductos();
     }
     @GetMapping("/products/{idproducto}")
-    public ProductoDTO getProductById(@PathVariable ("idproducto")int idproducto){
+    public ProductoDTO getProductById(@PathVariable ("idproducto")int idproducto) throws EntityNotFoundException{
 
         return productoService.getProductoById(idproducto);
     }
