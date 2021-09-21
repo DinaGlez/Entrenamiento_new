@@ -25,7 +25,7 @@ public class VentaController {
         return ventaService.getVentas();
     }
     @PostMapping("/ventas")
-    public void InsertVenta(@RequestBody Venta venta){
+    public void InsertVenta(@RequestBody VentaDTO venta){
         ventaService.insertVenta(venta);
     }
 

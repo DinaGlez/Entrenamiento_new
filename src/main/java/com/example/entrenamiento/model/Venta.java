@@ -19,7 +19,7 @@ public class Venta {
 
 
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
     @JoinColumn(name = "idcliente", nullable = false)
     private Cliente cliente;
 
