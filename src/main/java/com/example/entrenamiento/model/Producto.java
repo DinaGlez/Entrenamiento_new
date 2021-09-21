@@ -1,7 +1,7 @@
 package com.example.entrenamiento.model;
 
 import lombok.*;
-import  org.hibernate.validator.*;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;

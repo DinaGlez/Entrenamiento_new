@@ -30,14 +30,11 @@ public class VentaServiceImpl implements VentaService {
     private ModelMapper modelMapper;
 
 
- /*public VentaServiceImpl (ModelMapper modelMapper){
-     this.modelMapper=modelMapper;
-     this.modelMapper.addConverter(ConvertToVenta);
 
- }*/
     @Override
     public void insertVenta(VentaDTO ventaDTO) {
-        Venta venta = convertToVenta(ventaDTO);
+       // Venta venta = convertToVenta(ventaDTO);
+        Venta venta=modelMapper.map(ventaDTO, Venta.class);
         ventaDAO.save(venta);
     }
 
@@ -65,7 +62,7 @@ public class VentaServiceImpl implements VentaService {
     private Venta convertToVenta(VentaDTO ventaDTO) {
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
         Venta venta=modelMapper.map(ventaDTO, Venta.class);
-        venta.setCliente(clienteDAO.findById(ventaDTO.getIdcliente()).get());
+      //  venta.setCliente(clienteDAO.findById(ventaDTO.getIdcliente()).get());
         return venta;
     }
    /* Converter<VentaDTO, Venta> ConvertToVenta = new Converter<VentaDTO, Venta>() {
