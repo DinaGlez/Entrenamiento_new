@@ -6,6 +6,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -24,6 +26,12 @@ public class Producto {
     private String nombre;
     @NotNull(message = "El precio no puede ser nulo")
     private float precio;
+    @NotNull(message = "La cantidad no puede ser nula")
+    private int cantidad;
+
+
+    @OneToMany(mappedBy = "Producto", cascade = CascadeType.ALL)
+    private List<DetalleVenta> detalles=new ArrayList<>();
 
     @Override
    public String toString() {

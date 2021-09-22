@@ -3,6 +3,7 @@ package com.example.entrenamiento.model;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 @Entity
 @Getter
@@ -16,14 +17,16 @@ public class DetalleVenta {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer idDetalleVenta;
 
+    @NotNull(message = "La cantidad no puede se nula")
+    private int cantidad;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "idVenta", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idventa", nullable = false)
     private Venta venta;
 
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "idProducto", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idproducto", nullable = false)
     private Producto Producto;
 
 }

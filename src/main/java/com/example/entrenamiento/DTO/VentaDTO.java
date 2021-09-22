@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -16,6 +17,8 @@ public class VentaDTO {
     private int idventa;
     private Date fecha;
     private int idcliente;
+    private float importe;
+    private ArrayList<ProductoVentaDTO> productos;
 
 
 

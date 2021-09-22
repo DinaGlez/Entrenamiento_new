@@ -4,7 +4,10 @@ import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -17,11 +20,15 @@ public class Venta {
     @NotNull
     private Date fecha;
 
-
+    private float importe;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
     @JoinColumn(name = "idcliente", nullable = false)
     private Cliente cliente;
+
+    @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL)
+    //@JoinColumn(name = "idventa", nullable = false)
+        private List<DetalleVenta> detalles=new ArrayList<>();
 
     @Override
     public String toString() {
