@@ -68,11 +68,16 @@ public class ClienteServicioImpl implements ClienteService {
     }
 
     @Override
-    public ClienteDTO getClienteById(int idcliente) {
+    public ClienteDTO getClienteDTOById(int idcliente) {
         ClienteDTO clienteDTO = new ModelMapper().map(clienteDAO.findById(idcliente).get(), ClienteDTO.class);
 
         return clienteDTO;
 
+    }
+
+    @Override
+    public Cliente getClienteById(int idcliente) {
+        return clienteDAO.findById(idcliente).get();
     }
 
     @Override

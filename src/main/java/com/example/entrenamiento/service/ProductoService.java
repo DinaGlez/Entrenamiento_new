@@ -9,7 +9,11 @@ public interface ProductoService {
 
     void AddProducto(ProductoDTO productoDTO);
     void deleteProducto (int producto);
-    ProductoDTO getProductoById(int idproducto);
+    Producto getProductoById(int idproducto);
+    ProductoDTO getProductoDTOById(int idproducto);
+
     List<ProductoDTO> getProductos();
     void updateProducto(int id,ProductoDTO producto);
+    void updateProducto(Producto producto);
+
 }

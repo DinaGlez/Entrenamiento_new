@@ -32,7 +32,7 @@ ProductoService productoService;
     @GetMapping("/products/{idproducto}")
     public ProductoDTO getProductById(@PathVariable ("idproducto")int idproducto) throws EntityNotFoundException{
 
-        return productoService.getProductoById(idproducto);
+        return productoService.getProductoDTOById(idproducto);
     }
     @PutMapping("/products/{idproducto}")
     public void updateProducto(@PathVariable ("idproducto") int idproducto, @RequestBody ProductoDTO productodto){

@@ -30,7 +30,7 @@ public class ClienteController {
     @GetMapping("/clientes/{idcliente}")
     public ClienteDTO getProductById(@PathVariable ("idcliente")int idcliente){
 
-        return clienteService.getClienteById(idcliente);
+        return clienteService.getClienteDTOById(idcliente);
     }
     @PutMapping("/clientes/{idcliente}")
     public void updateCliente(@PathVariable ("idcliente") int idcliente, @RequestBody ClienteDTO clienteDTO){

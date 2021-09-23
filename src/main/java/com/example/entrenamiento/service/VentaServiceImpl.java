@@ -1,6 +1,7 @@
 package com.example.entrenamiento.service;
+import com.example.entrenamiento.service.ProductoService;
 
-import com.example.entrenamiento.DTO.ProductoVentaDTO;
+import com.example.entrenamiento.DTO.DetalleVentaDTO;
 import com.example.entrenamiento.DTO.VentaDTO;
 import com.example.entrenamiento.model.DetalleVenta;
 import com.example.entrenamiento.model.Producto;
@@ -13,7 +14,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
 @Component
@@ -21,35 +21,39 @@ public class VentaServiceImpl implements VentaService {
     @Autowired
     VentaDAO ventaDAO;
     @Autowired
-    ClienteDAO clienteDAO;
+    ClienteService clienteService;
     @Autowired
-    ProductoDAO productoDAO;
-    @Autowired
-    DetalleVentaDAO detalleVentaDAO;
+    DetalleVentaService detalleVentaService;
     @Autowired
     private ModelMapper modelMapper;
-
+    @Autowired
+    ProductoService productoService;
 
 
     @Override
     public void insertVenta(VentaDTO ventaDTO) {
        Venta venta = convertToVenta(ventaDTO);
-        //Venta venta=modelMapper.map(ventaDTO, Venta.class);
-       Venta savedVenta= AddVenta(venta);
-       ArrayList<ProductoVentaDTO> productos= ventaDTO.getProductos();
-       productos.forEach((ProductoVentaDTO producto)->{
- Producto prod= productoDAO.findById(producto.getIdproducto()).get();
-            detalleVentaDAO.save(new DetalleVenta(null,producto.getCantidad(),savedVenta,prod));
-           Producto productoUpdated= productoDAO.findById(producto.getIdproducto()).get();
-           productoUpdated.setCantidad(productoUpdated.getCantidad()-producto.getCantidad());
-            productoDAO.save(productoUpdated);
-            float importe=savedVenta.getImporte();
-            importe = importe+producto.getCantidad()*productoUpdated.getPrecio();
-             savedVenta.setImporte(importe);
-    });
 
-ventaDAO.save(savedVenta);
+       Venta savedVenta= AddVenta(venta);
+       //Obtengo la lista de DetalleVentaDTO que me da
+       ArrayList<DetalleVentaDTO> productos= ventaDTO.getProductos();
+
+       productos.forEach((DetalleVentaDTO producto)->{
+
+           Producto prod= productoService.getProductoById(producto.getIdproducto());
+            detalleVentaService.insertDetalle(new DetalleVenta(null,producto.getCantidad(),savedVenta,prod));
+           Producto productoUpdated= productoService.getProductoById(producto.getIdproducto());
+           productoUpdated.setCantidad(productoUpdated.getCantidad()-producto.getCantidad());
+           productoService.updateProducto(productoUpdated);
+
+    });
+                savedVenta.setImporte(ventaDTO.getProductos().stream().mapToDouble(detalle->{
+                    Producto producto =productoService.getProductoById(detalle.getIdproducto());
+                    return producto.getPrecio()*detalle.getCantidad();
+                }).sum());
+                ventaDAO.save(savedVenta);
     }
+
     public Venta AddVenta(Venta venta){
         venta.setImporte(0);
         return ventaDAO.save(venta);
@@ -78,21 +82,8 @@ ventaDAO.save(savedVenta);
     private Venta convertToVenta(VentaDTO ventaDTO) {
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
         Venta venta=modelMapper.map(ventaDTO, Venta.class);
-       venta.setCliente(clienteDAO.findById(ventaDTO.getIdcliente()).get());
+       venta.setCliente(clienteService.getClienteById(ventaDTO.getIdcliente()));
         return venta;
     }
-   /* Converter<VentaDTO, Venta> ConvertToVenta = new Converter<VentaDTO, Venta>() {
-        @Override
-        public Venta convert(MappingContext<VentaDTO, Venta> context) {
-            //This custom converter replaces the one automatically created by ModelMapper,
-            //So we have to map each of the contact fields as well.
-            context.getDestination().setIdventa(context.getSource().getIdventa());
-            context.getDestination().setFecha(context.getSource().getFecha());
-            context.getDestination().setCliente(new ClienteServicioImpl().getClienteById2(context.getSource().getIdcliente()));
 
-
-            return context.getDestination();
-        }
-
-    };*/
     }

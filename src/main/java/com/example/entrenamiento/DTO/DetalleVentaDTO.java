@@ -9,7 +9,8 @@ import javax.validation.constraints.NotNull;
 @Getter
 @Setter
 @NoArgsConstructor
-public class ProductoVentaDTO {
+
+public class DetalleVentaDTO {
     int idproducto;
     @NotNull(message = "La existencia no puede ser nula")
     private int cantidad;

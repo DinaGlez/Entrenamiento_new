@@ -17,8 +17,8 @@ public class VentaDTO {
     private int idventa;
     private Date fecha;
     private int idcliente;
-    private float importe;
-    private ArrayList<ProductoVentaDTO> productos;
+    private double importe;
+    private ArrayList<DetalleVentaDTO> productos;
 
 
 

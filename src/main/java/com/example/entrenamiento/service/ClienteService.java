@@ -12,7 +12,9 @@ public interface ClienteService {
     void AddCliente(ClienteDTO clienteDTO) ;
     List<ClienteDTO> getAll() ;
     void updateCliente(int id, ClienteDTO cliente);
-    ClienteDTO getClienteById(int idcliente);
+    ClienteDTO getClienteDTOById(int idcliente);
+    Cliente getClienteById(int idcliente);
+
     void deletecliente (int idcliente);
 
 }

@@ -29,11 +29,6 @@ public class VentaController {
         ventaService.insertVenta(venta);
     }
 
-    @PostMapping("/AddProduct/{idventa}/{idproducto}")
-    public void InsertProducto(@RequestBody @PathVariable ("idventa")int idventa,@PathVariable ("idproducto")int idproducto){
-        Venta venta=ventaService.GetVentaById(idventa);
 
-        detalleVentaService.addProducto(venta,idproducto);
-    }
 
 }

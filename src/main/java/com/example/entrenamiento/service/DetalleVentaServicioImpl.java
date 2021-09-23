@@ -23,7 +23,7 @@ public class DetalleVentaServicioImpl implements DetalleVentaService{
     @Autowired
     private ModelMapper modelMapper;
 
-    @Override
+
     public void addProducto(Venta venta, int idproducto) {
         Producto prod=productoDAO.findById(idproducto).get();
 
@@ -34,6 +34,11 @@ public class DetalleVentaServicioImpl implements DetalleVentaService{
                 .build();
 
 
+        detalleVentaDAO.save(detalleVenta);
+    }
+
+    @Override
+    public void insertDetalle(DetalleVenta detalleVenta) {
         detalleVentaDAO.save(detalleVenta);
     }
 }

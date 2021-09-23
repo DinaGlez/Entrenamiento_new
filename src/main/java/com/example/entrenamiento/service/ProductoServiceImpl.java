@@ -34,10 +34,13 @@ public class ProductoServiceImpl implements ProductoService {
     }
 
     @Override
-    public ProductoDTO getProductoById(int idproducto) {
+    public ProductoDTO getProductoDTOById(int idproducto) {
         return convertToProductoDTO(productoDAO.findById(idproducto).get());
     }
-
+    @Override
+    public Producto getProductoById(int idproducto) {
+        return productoDAO.findById(idproducto).get();
+    }
     @Override
         public List<ProductoDTO> getProductos() {
         return ((List<Producto>) productoDAO
@@ -56,6 +59,11 @@ public class ProductoServiceImpl implements ProductoService {
         productoDAO.save(productodto);
 
 
+    }
+
+    @Override
+    public void updateProducto(Producto producto) {
+        productoDAO.save(producto);
     }
 
     private ProductoDTO convertToProductoDTO(Producto producto) {
