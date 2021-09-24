@@ -38,7 +38,7 @@ public class VentaServiceImpl implements VentaService {
        //Obtengo la lista de DetalleVentaDTO que me da
        ArrayList<DetalleVentaDTO> productos= ventaDTO.getProductos();
 
-       productos.forEach((DetalleVentaDTO producto)->{
+       productos.stream().forEach(producto->{
 
            Producto prod= productoService.getProductoById(producto.getIdproducto());
             detalleVentaService.insertDetalle(new DetalleVenta(null,producto.getCantidad(),savedVenta,prod));

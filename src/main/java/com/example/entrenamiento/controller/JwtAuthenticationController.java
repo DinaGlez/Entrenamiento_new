@@ -46,14 +46,14 @@ public class JwtAuthenticationController {
     private void authenticate(String username, String password) throws Exception {
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
-        } catch (HttpClientErrorException e) {
-            //   throw new Exception("USER_DISABLED", e);
-            // } catch (BadCredentialsException e) {
-            //   throw new Exception("INVALID_CREDENTIALS", e);
-            //}
+        } //catch (HttpClientErrorException e) {
+             //  throw new Exception("USER_DISABLED", e);}
+            catch (BadCredentialsException e) {
+              throw new Exception("Su usuario o su contraseña no son correctos", e);
+            }
             // catch (HttpClientErrorException.Unauthorized e) {
             //    throw new Exception("MUST PROVIDE AUTHENTICATION VALUES", e);
             // }
-        }
+        //}
     }
 }
