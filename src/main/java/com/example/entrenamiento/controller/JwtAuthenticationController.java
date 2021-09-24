@@ -1,5 +1,5 @@
 package com.example.entrenamiento.controller;
-//TODO: import no usado
+//TODO: ok import no usado
 import com.example.entrenamiento.model.JwtRequest;
 import com.example.entrenamiento.model.JwtResponse;
 import com.example.entrenamiento.security.JwtTokenUtil;
@@ -8,11 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.HttpClientErrorException;
 
 @RestController
 @CrossOrigin
@@ -42,7 +40,7 @@ public class JwtAuthenticationController {
         return ResponseEntity.ok(new JwtResponse(token));
     }
 
-    //TODO: aunque este es un codigo legado de internet, seria bueno mejorar el manejo de excepciones creando propias.
+    //TODO:ok aunque este es un codigo legado de internet, seria bueno mejorar el manejo de excepciones creando propias.
     private void authenticate(String username, String password) throws Exception {
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));

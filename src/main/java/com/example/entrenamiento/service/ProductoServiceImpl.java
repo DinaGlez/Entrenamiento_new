@@ -1,5 +1,7 @@
 package com.example.entrenamiento.service;
 
+import com.example.entrenamiento.DTO.VentaDTO;
+import com.example.entrenamiento.model.Venta;
 import com.example.entrenamiento.repository.ProductoDAO;
 import com.example.entrenamiento.model.Producto;
 import com.example.entrenamiento.DTO.ProductoDTO;
@@ -70,5 +72,11 @@ public class ProductoServiceImpl implements ProductoService {
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
         ProductoDTO productoDTO=modelMapper.map(producto,ProductoDTO.class);
         return productoDTO;
+    }
+
+    public Producto convertToProducto(ProductoDTO productoDTO) {
+        modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
+        Producto producto=modelMapper.map(productoDTO, Producto.class);
+        return producto;
     }
 }

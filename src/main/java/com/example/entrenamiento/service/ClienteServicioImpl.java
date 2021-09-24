@@ -1,5 +1,6 @@
 package com.example.entrenamiento.service;
 
+import com.example.entrenamiento.DTO.DetalleVentaDTO;
 import com.example.entrenamiento.DTO.ProductoDTO;
 import com.example.entrenamiento.model.Producto;
 import com.example.entrenamiento.model.Venta;
@@ -78,6 +79,11 @@ public class ClienteServicioImpl implements ClienteService {
     @Override
     public Cliente getClienteById(int idcliente) {
         return clienteDAO.findById(idcliente).get();
+    }
+
+    @Override
+    public List<DetalleVentaDTO> findDetalleVentaDtoList(int idcliente) {
+        return null;
     }
 
     @Override

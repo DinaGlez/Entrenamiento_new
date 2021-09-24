@@ -1,5 +1,6 @@
 package com.example.entrenamiento.repository;
 
+import com.example.entrenamiento.DTO.DetalleVentaDTO;
 import com.example.entrenamiento.model.Cliente;
 import com.example.entrenamiento.model.DetalleVenta;
 import com.example.entrenamiento.model.Producto;
@@ -18,6 +19,11 @@ import java.util.Map;
 @Repository
 public abstract class VentaDAOImpl  implements  VentaDAO{
 
+   /*public  List<DetalleVentaDTO> findDetallesById(int idventa){
+       List<DetalleVentaDTO> detalles=new ArrayList<>();
+
+       return detalles;
+   }*/
 
 
 

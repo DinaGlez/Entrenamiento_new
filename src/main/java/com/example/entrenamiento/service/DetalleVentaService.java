@@ -1,11 +1,17 @@
 package com.example.entrenamiento.service;
 
+import com.example.entrenamiento.DTO.DetalleVentaDTO;
 import com.example.entrenamiento.model.DetalleVenta;
 import com.example.entrenamiento.model.Venta;
 
+import java.util.List;
+
 public interface DetalleVentaService {
  void insertDetalle(DetalleVenta detalleVenta);
-
+ DetalleVenta addDetalle(DetalleVenta detalleVenta);
+ List<DetalleVentaDTO> getDetalles(int idventa);
+// DetalleVenta convertToDetalleVenta(DetalleVentaDTO detalleVentaDTO);
+ DetalleVentaDTO convertToDetalleVentaDTO(DetalleVenta detalleVenta);
 
 
 

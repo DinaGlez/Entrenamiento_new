@@ -15,9 +15,9 @@ import java.util.List;
 public class VentaDTO {
 
     private int idventa;
-    private Date fecha;
+   private Date fecha;
     private int idcliente;
-    private double importe;
+   private double importe;
     private ArrayList<DetalleVentaDTO> productos;
 
 

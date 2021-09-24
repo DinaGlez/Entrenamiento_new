@@ -1,6 +1,7 @@
 package com.example.entrenamiento.controller;
 
 import com.example.entrenamiento.DTO.ClienteDTO;
+import com.example.entrenamiento.DTO.DetalleVentaDTO;
 import com.example.entrenamiento.DTO.ProductoDTO;
 import com.example.entrenamiento.model.Cliente;
 import com.example.entrenamiento.model.Producto;
@@ -43,5 +44,9 @@ public class ClienteController {
         clienteService.deletecliente(idcliente);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+    /*@GetMapping("/factura/{idcliente}")
+    public List<DetalleVentaDTO> getFacturaById(@PathVariable ("idcliente")int idcliente){
 
+        return clienteService.getClienteDTOById(idcliente);
+    }*/
 }

@@ -1,6 +1,7 @@
 package com.example.entrenamiento.service;
 
 import com.example.entrenamiento.DTO.ClienteDTO;
+import com.example.entrenamiento.DTO.DetalleVentaDTO;
 import com.example.entrenamiento.DTO.ProductoDTO;
 import com.example.entrenamiento.model.Cliente;
 import com.example.entrenamiento.model.Venta;
@@ -14,7 +15,7 @@ public interface ClienteService {
     void updateCliente(int id, ClienteDTO cliente);
     ClienteDTO getClienteDTOById(int idcliente);
     Cliente getClienteById(int idcliente);
-
+    List<DetalleVentaDTO> findDetalleVentaDtoList(int idcliente);
     void deletecliente (int idcliente);
 
 }

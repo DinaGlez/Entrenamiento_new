@@ -1,5 +1,7 @@
 package com.example.entrenamiento.controller;
 
+import com.example.entrenamiento.DTO.ClienteDTO;
+import com.example.entrenamiento.DTO.DetalleVentaDTO;
 import com.example.entrenamiento.DTO.VentaDTO;
 import com.example.entrenamiento.model.DetalleVenta;
 import com.example.entrenamiento.model.Producto;
@@ -24,6 +26,17 @@ public class VentaController {
 
         return ventaService.getVentas();
     }
+    @GetMapping("/ventaDetalle/{idventa}")
+    public List<DetalleVentaDTO> getVentaById(@PathVariable ("idventa")int idventa){
+
+        return ventaService.GetListaDetallleById(idventa);
+    }
+    @GetMapping("/venta/{idventa}")
+    public VentaDTO getVenta(@PathVariable ("idventa")int idventa){
+
+        return ventaService.getVenta(idventa);
+    }
+
     @PostMapping("/ventas")
     public void InsertVenta(@RequestBody VentaDTO venta){
         ventaService.insertVenta(venta);

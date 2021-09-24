@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -41,10 +42,14 @@ public class VentaServiceImpl implements VentaService {
        productos.stream().forEach(producto->{
 
            Producto prod= productoService.getProductoById(producto.getIdproducto());
-            detalleVentaService.insertDetalle(new DetalleVenta(null,producto.getCantidad(),savedVenta,prod));
+           List<DetalleVenta> detalles=savedVenta.getDetalles() ;
+           detalles.add(detalleVentaService.addDetalle(new DetalleVenta(null,producto.getCantidad(),savedVenta,prod)));
+
+            savedVenta.setDetalles(detalles);;
            Producto productoUpdated= productoService.getProductoById(producto.getIdproducto());
            productoUpdated.setCantidad(productoUpdated.getCantidad()-producto.getCantidad());
            productoService.updateProducto(productoUpdated);
+
 
     });
                 savedVenta.setImporte(ventaDTO.getProductos().stream().mapToDouble(detalle->{
@@ -52,10 +57,11 @@ public class VentaServiceImpl implements VentaService {
                     return producto.getPrecio()*detalle.getCantidad();
                 }).sum());
                 ventaDAO.save(savedVenta);
-    }
+                  }
 
     public Venta AddVenta(Venta venta){
-        venta.setImporte(0);
+        Date date = new Date();
+        venta.setFecha(date);
         return ventaDAO.save(venta);
     }
     @Override
@@ -67,16 +73,26 @@ public class VentaServiceImpl implements VentaService {
                 .collect(Collectors.toList());
     }
 
+
+
     @Override
-    public Venta GetVentaById(int idventa) {
-       return ventaDAO.findById(idventa).get();
+    public List<DetalleVentaDTO> GetListaDetallleById(int idventa) {
+        //return ((List<DetalleVentaDTO>) ventaDAO.findById(idventa).get().getDetalles().stream().map(detalleVentaService::convertToDetalleVentaDTO).collect(Collectors.toList())) ;
+    return ventaDAO.findById(idventa).get().getDetalles().stream().map(detalleVentaService::convertToDetalleVentaDTO).collect(Collectors.toList());
     }
 
+    @Override
+    public VentaDTO getVenta(int idventa) {
+        VentaDTO ventaDTO=modelMapper.map(ventaDAO.findById(idventa).get(),VentaDTO.class) ;
+        ventaDTO.setProductos((ArrayList<DetalleVentaDTO>)GetListaDetallleById(idventa));
+        return ventaDTO;
+    }
 
 
     private VentaDTO convertToVentaDTO(Venta venta) {
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
         VentaDTO ventaDTO=modelMapper.map(venta, VentaDTO.class);
+      //  ventaDTO.setProductos((ArrayList<DetalleVentaDTO>) venta.getDetalles().stream().map(detalleVentaService::convertToDetalleVentaDTO).collect(Collectors.toList()));
         return ventaDTO;
     }
     private Venta convertToVenta(VentaDTO ventaDTO) {

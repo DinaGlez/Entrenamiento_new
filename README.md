@@ -2,9 +2,10 @@
 
 ### Autenthication:
 1. Generar token mediante llamada a método POST authenticate
-Ejemplo: curl --header "Content-Type: application/json"   --request POST   --data "{"""username""":"""javainuse""","""password""":"""password"""}"   http://localhost:8080/authenticate
-2. Usar token:
-   {"token":"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqYXZhaW51c2UiLCJleHAiOjE2MzE2ODg0MTcsImlhdCI6MTYzMTY3MDQxN30.dsUPXA4A9ASeoVKxDb5yEaqOxHhVzsf0P4WHUuyDM5KQFZZiAcEO2k47Owt8SDRkHW2gfaEAbQ3nxjUIC2OPLg"}
+Ejemplo: curl --header "Content-Type: application/json"   --request POST   --data "{"""username""":"""dina""","""password""":"""password"""}"   http://localhost:8080/authenticate
+2. El listado de usuarios se obtiene desde la db por defecto:
+3. user:dina password:pasword
+4. user:jorge password:pasword
 
 ### Métodos Implementados
  **Productos**:
@@ -23,8 +24,9 @@ Ejemplo: curl --header "Content-Type: application/json"   --request POST   --dat
 5. PUT clientes/{idclientes} (modifica un producto)
 
 **Venta**
-1. GET ventas (lista las ventas registradas)
-2. POST ventas (inserta venta pasar objeto venta)
+1. GET venta/{idventa} (muestra venta solicitada incluido el listado de detalles)
+2. GET ventadetalle/{idventa} (muestra el listado de detalles)
+3. POST ventas (inserta venta pasar objeto venta)
 
 ### Pruebas
 Implementado ProductRepositoryTest para probar CRUD de producto
@@ -33,4 +35,4 @@ Implementado ProductRepositoryTest para probar CRUD de producto
 Add RestExceptionHandler para el tratamiento de excepciones con @ExceptionHandler
 
 ##Log
-Se registran en un fichero denominado: AppDinaTraza
+Se registran en un fichero denominado: AppTraza
