@@ -1,6 +1,6 @@
 
-INSERT INTO jwt_request(password,username)VALUES('$2a$10$slYQmyNdGzTn7ZLBXBChFOC9f6kFjAqPhccnP6DxlWXx2lPk1C3G6','dina');
-INSERT INTO jwt_request(password,username)VALUES('$2a$10$slYQmyNdGzTn7ZLBXBChFOC9f6kFjAqPhccnP6DxlWXx2lPk1C3G6','jorge');
+INSERT INTO jwt_request(password,username)VALUES('$2a$10$JgmmwV7mGndWGeL5BznJmO5KWF7C.7O./gtYJqKFAyELNgxQzd48e','dina');
+INSERT INTO jwt_request(password,username)VALUES('$2a$10$JgmmwV7mGndWGeL5BznJmO5KWF7C.7O./gtYJqKFAyELNgxQzd48e','jorge');
 
 INSERT INTO producto (cantidad,nombre,precio)VALUES(10,'Aceitunas',1.75);
 INSERT INTO producto (cantidad,nombre,precio)VALUES(10,'Te verde',3.05);

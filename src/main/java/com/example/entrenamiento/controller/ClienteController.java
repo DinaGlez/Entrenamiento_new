@@ -25,8 +25,10 @@ public class ClienteController {
 
 
     @PostMapping("/clientes")
-    public void insertCliente(@RequestBody ClienteDTO cliente) {
-      clienteService.AddCliente(cliente);    }
+    public ResponseEntity<?> insertCliente(@RequestBody ClienteDTO cliente) {
+      clienteService.AddCliente(cliente);
+       return ResponseEntity.ok(cliente);
+    }
 
     @GetMapping("/clientes/{idcliente}")
     public ClienteDTO getProductById(@PathVariable ("idcliente")int idcliente){
@@ -34,9 +36,10 @@ public class ClienteController {
         return clienteService.getClienteDTOById(idcliente);
     }
     @PutMapping("/clientes/{idcliente}")
-    public void updateCliente(@PathVariable ("idcliente") int idcliente, @RequestBody ClienteDTO clienteDTO){
+    public ResponseEntity<?> updateCliente(@PathVariable ("idcliente") int idcliente, @RequestBody ClienteDTO clienteDTO){
         clienteService.updateCliente(idcliente, clienteDTO);
 
+    return ResponseEntity.ok(clienteService.getClienteDTOById(idcliente));
     }
 
     @DeleteMapping("/clientes/{idcliente}")

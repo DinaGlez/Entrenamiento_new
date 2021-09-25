@@ -35,13 +35,15 @@ ProductoService productoService;
         return productoService.getProductoDTOById(idproducto);
     }
     @PutMapping("/products/{idproducto}")
-    public void updateProducto(@PathVariable ("idproducto") int idproducto, @RequestBody ProductoDTO productodto){
+    public ResponseEntity<?> updateProducto(@PathVariable ("idproducto") int idproducto, @RequestBody ProductoDTO productodto){
         productoService.updateProducto(idproducto, productodto);
-
+         return ResponseEntity.ok(productoService.getProductoDTOById(idproducto));
     }
     @PostMapping("/products")
-    public void AddProducto(@RequestBody ProductoDTO producto){
-         productoService.AddProducto(producto);
+    public ResponseEntity<?> AddProducto(@RequestBody ProductoDTO producto){
+
+        productoService.AddProducto(producto);
+        return ResponseEntity.ok(producto);
     }
 
    @DeleteMapping("/products/{idproducto}")

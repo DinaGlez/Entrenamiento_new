@@ -2,10 +2,12 @@
 
 ### Autenthication:
 1. Generar token mediante llamada a método POST authenticate
-Ejemplo: curl --header "Content-Type: application/json"   --request POST   --data "{"""username""":"""dina""","""password""":"""password"""}"   http://localhost:8080/authenticate
-2. El listado de usuarios se obtiene desde la db por defecto:
-3. user:dina password:pasword
-4. user:jorge password:pasword
+Ejemplo: curl --header "Content-Type: application/json"   --request POST   --data "{"""username""":"""dina""","""password""":"""entrenamiento"""}"   http://localhost:8080/authenticate
+2. El listado de usuarios se obtiene desde la db 
+3. Por defecto:
+4. user:dina password:entrenamiento
+5. user:jorge password:entrenamiento
+6. Para insertar nuevos user: /user pasando en el json username y password
 
 ### Métodos Implementados
  **Productos**:
