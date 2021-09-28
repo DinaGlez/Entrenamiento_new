@@ -1,6 +1,8 @@
 package com.example.entrenamiento.model;
 
 import lombok.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -9,10 +11,8 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor // <--- THIS is it
-@AllArgsConstructor
+@Data
+@NoArgsConstructor
 public class Venta {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -22,8 +22,9 @@ public class Venta {
 
     private double importe;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "idcliente", nullable = false)
+    @OnDelete(action = OnDeleteAction.NO_ACTION)
     private Cliente cliente;
 
     @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL)

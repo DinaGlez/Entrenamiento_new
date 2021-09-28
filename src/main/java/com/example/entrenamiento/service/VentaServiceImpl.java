@@ -1,5 +1,5 @@
 package com.example.entrenamiento.service;
-import com.example.entrenamiento.service.ProductoService;
+
 
 import com.example.entrenamiento.DTO.DetalleVentaDTO;
 import com.example.entrenamiento.DTO.VentaDTO;
@@ -12,6 +12,7 @@ import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -32,23 +33,20 @@ public class VentaServiceImpl implements VentaService {
 
 
     @Override
-    public void insertVenta(VentaDTO ventaDTO) {
+    @Transactional
+    public int insertVenta(VentaDTO ventaDTO) {
        Venta venta = convertToVenta(ventaDTO);
 
        Venta savedVenta= AddVenta(venta);
        //Obtengo la lista de DetalleVentaDTO que me da
-       ArrayList<DetalleVentaDTO> productos= ventaDTO.getProductos();
+       ArrayList<DetalleVentaDTO> detalles= ventaDTO.getProductos();
 
-       productos.stream().forEach(producto->{
+       detalles.stream().forEach(detalle->{
 
-           Producto prod= productoService.getProductoById(producto.getIdproducto());
-           List<DetalleVenta> detalles=savedVenta.getDetalles() ;
-           detalles.add(detalleVentaService.addDetalle(new DetalleVenta(null,producto.getCantidad(),savedVenta,prod)));
-
-            savedVenta.setDetalles(detalles);;
-           Producto productoUpdated= productoService.getProductoById(producto.getIdproducto());
-           productoUpdated.setCantidad(productoUpdated.getCantidad()-producto.getCantidad());
-           productoService.updateProducto(productoUpdated);
+           Producto prod= productoService.getProductoById(detalle.getIdproducto());
+           detalleVentaService.addDetalle(new DetalleVenta(null,detalle.getCantidad(),savedVenta,prod));
+           prod.setCantidad(prod.getCantidad()-detalle.getCantidad());
+           productoService.updateProducto(prod);
 
 
     });
@@ -57,6 +55,8 @@ public class VentaServiceImpl implements VentaService {
                     return producto.getPrecio()*detalle.getCantidad();
                 }).sum());
                 ventaDAO.save(savedVenta);
+
+                return savedVenta.getIdventa();
                   }
 
     public Venta AddVenta(Venta venta){
@@ -85,6 +85,7 @@ public class VentaServiceImpl implements VentaService {
     public VentaDTO getVenta(int idventa) {
         VentaDTO ventaDTO=modelMapper.map(ventaDAO.findById(idventa).get(),VentaDTO.class) ;
         ventaDTO.setProductos((ArrayList<DetalleVentaDTO>)GetListaDetallleById(idventa));
+
         return ventaDTO;
     }
 
@@ -92,7 +93,7 @@ public class VentaServiceImpl implements VentaService {
     private VentaDTO convertToVentaDTO(Venta venta) {
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
         VentaDTO ventaDTO=modelMapper.map(venta, VentaDTO.class);
-      //  ventaDTO.setProductos((ArrayList<DetalleVentaDTO>) venta.getDetalles().stream().map(detalleVentaService::convertToDetalleVentaDTO).collect(Collectors.toList()));
+      ventaDTO.setProductos((ArrayList<DetalleVentaDTO>) venta.getDetalles().stream().map(detalleVentaService::convertToDetalleVentaDTO).collect(Collectors.toList()));
         return ventaDTO;
     }
     private Venta convertToVenta(VentaDTO ventaDTO) {

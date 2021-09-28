@@ -1,10 +1,7 @@
 package com.example.entrenamiento.controller;
 
 import com.example.entrenamiento.DTO.ClienteDTO;
-import com.example.entrenamiento.DTO.DetalleVentaDTO;
-import com.example.entrenamiento.DTO.ProductoDTO;
 import com.example.entrenamiento.model.Cliente;
-import com.example.entrenamiento.model.Producto;
 import com.example.entrenamiento.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -43,13 +40,13 @@ public class ClienteController {
     }
 
     @DeleteMapping("/clientes/{idcliente}")
-    public ResponseEntity<Cliente> DeleteProducto(@PathVariable ("idcliente") int idcliente){
-        clienteService.deletecliente(idcliente);
+    public ResponseEntity<Cliente> DeleteProducto(@PathVariable ("idcliente") int idcliente) throws Exception {
+      try {
+          clienteService.deletecliente(idcliente);
+      }catch (Exception e){
+          throw new Exception("Imposible borrar cliente, tiene ventas asociadas", e.getCause());
+      }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
-    /*@GetMapping("/factura/{idcliente}")
-    public List<DetalleVentaDTO> getFacturaById(@PathVariable ("idcliente")int idcliente){
 
-        return clienteService.getClienteDTOById(idcliente);
-    }*/
 }

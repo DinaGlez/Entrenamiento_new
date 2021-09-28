@@ -8,7 +8,7 @@ import java.util.List;
 public interface ProductoService {
 
     void AddProducto(ProductoDTO productoDTO);
-    void deleteProducto (int producto);
+    void deleteProducto (int producto) throws Exception;
     Producto getProductoById(int idproducto);
     ProductoDTO getProductoDTOById(int idproducto);
     Producto convertToProducto(ProductoDTO productoDTO);

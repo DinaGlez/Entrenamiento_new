@@ -10,6 +10,7 @@ import com.example.entrenamiento.DTO.ClienteDTO;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -87,8 +88,13 @@ public class ClienteServicioImpl implements ClienteService {
     }
 
     @Override
-    public void deletecliente(int idcliente) {
-        clienteDAO.deleteById(idcliente);
+    public void deletecliente(int idcliente) throws Exception {
+        try {
+            clienteDAO.deleteById(idcliente);
+
+        }catch (Exception e){
+            throw new Exception("Imposible borrar cliente, tiene ventas asociadas", e.getCause());
+        }
     }
 
     private ClienteDTO convertToCLienteDTO2(Cliente cliente) {

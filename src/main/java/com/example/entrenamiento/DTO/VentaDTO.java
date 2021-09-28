@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 public class VentaDTO {
 
-    private int idventa;
+    //private int idventa;
    private Date fecha;
     private int idcliente;
    private double importe;

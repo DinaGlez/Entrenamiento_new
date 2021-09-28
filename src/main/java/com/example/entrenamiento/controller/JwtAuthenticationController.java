@@ -1,10 +1,8 @@
 package com.example.entrenamiento.controller;
-//TODO: ok import no usado
 import com.example.entrenamiento.model.JwtRequest;
 import com.example.entrenamiento.model.JwtResponse;
 import com.example.entrenamiento.security.JwtTokenUtil;
 import com.example.entrenamiento.service.JwtUserDetailsService;
-import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -27,7 +25,6 @@ public class JwtAuthenticationController {
     private JwtUserDetailsService userDetailsService;
 
     //TODO: no usar wildcards ? en las respuestas.
-    //TODO: OK no usar requestmapping, usar los metodos que ya traen implicito el metodo HTTP, en este caso seria @PostMapping,
     @PostMapping(value = "/authenticate")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
 

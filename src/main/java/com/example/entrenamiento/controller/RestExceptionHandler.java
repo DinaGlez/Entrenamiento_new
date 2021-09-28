@@ -25,10 +25,10 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 import org.springframework.web.servlet.NoHandlerFoundException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.NoSuchElementException;
 
-import static org.springframework.http.HttpStatus.BAD_REQUEST;
-import static org.springframework.http.HttpStatus.NOT_FOUND;
+import static org.springframework.http.HttpStatus.*;
 
 
 @Order(Ordered.HIGHEST_PRECEDENCE)
@@ -247,6 +247,14 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     protected ResponseEntity<Object> NoSuchElementException(Exception ex, WebRequest request) {
         ApiError apiError = new ApiError(NOT_FOUND);
         apiError.setMessage(String.format("El valor no se encuentra en la BD"));
+        apiError.setDebugMessage(ex.getMessage());
+        return buildResponseEntity(apiError);
+
+    }
+    @ExceptionHandler({ SQLIntegrityConstraintViolationException.class })
+    protected ResponseEntity<Object> SQLIntegrityConstraintViolationException(Exception ex, WebRequest request) {
+        ApiError apiError = new ApiError(CONFLICT);
+        apiError.setMessage(String.format("Imposible borrar objeto, tiene asociaciones con otras entidades"));
         apiError.setDebugMessage(ex.getMessage());
         return buildResponseEntity(apiError);
 

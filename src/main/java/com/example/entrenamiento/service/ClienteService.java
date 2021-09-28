@@ -16,6 +16,6 @@ public interface ClienteService {
     ClienteDTO getClienteDTOById(int idcliente);
     Cliente getClienteById(int idcliente);
     List<DetalleVentaDTO> findDetalleVentaDtoList(int idcliente);
-    void deletecliente (int idcliente);
+    void deletecliente (int idcliente) throws Exception;
 
 }

@@ -47,8 +47,13 @@ ProductoService productoService;
     }
 
    @DeleteMapping("/products/{idproducto}")
-   public ResponseEntity<Producto> DeleteProducto(@PathVariable ("idproducto") int idproducto){
-    productoService.deleteProducto(idproducto);
+   public ResponseEntity<Producto> DeleteProducto(@PathVariable ("idproducto") int idproducto) throws Exception{
+    try {
+        productoService.deleteProducto(idproducto);
+
+    }catch (Exception e){
+        throw new Exception("Imposibe borrar producto, esta asociado a ventas");
+    }
     return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }

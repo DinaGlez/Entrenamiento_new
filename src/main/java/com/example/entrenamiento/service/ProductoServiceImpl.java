@@ -31,8 +31,13 @@ public class ProductoServiceImpl implements ProductoService {
 
 
     @Override
-    public void deleteProducto(int idproducto) {
-        productoDAO.deleteById(idproducto);
+    public void deleteProducto(int idproducto) throws Exception{
+        try{
+            productoDAO.deleteById(idproducto);
+        } catch (Exception e){
+            throw new Exception("Imposible borrar cliente, tiene ventas asociadas", e.getCause());
+
+        }
     }
 
     @Override
@@ -56,9 +61,10 @@ public class ProductoServiceImpl implements ProductoService {
         Producto prod = productoDAO.findById(idproducto).get();
         prod.setNombre(producto.getNombre());
         prod.setPrecio(producto.getPrecio());
-        Producto productodto = new ModelMapper().map(prod, Producto.class);
+        prod.setCantidad(producto.getCantidad());
+        //Producto productodto = new ModelMapper().map(prod, Producto.class);
 
-        productoDAO.save(productodto);
+        productoDAO.save(prod);
 
 
     }

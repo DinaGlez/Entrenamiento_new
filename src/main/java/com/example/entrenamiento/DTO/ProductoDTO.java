@@ -15,7 +15,7 @@ public class ProductoDTO {
     @NotNull(message = "El nombre no puede se nulo")
     @NotEmpty(message = "El nombre no puede estar vacio")
     private String nombre;
-    private float precio;
+    private double precio;
 
     private int cantidad;
 

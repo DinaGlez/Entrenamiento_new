@@ -11,6 +11,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 @Service
 public class JwtUserDetailsService implements UserDetailsService {
@@ -22,7 +27,13 @@ public class JwtUserDetailsService implements UserDetailsService {
     //TODO: cargar los datos como se indica en el ejercicio
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-            if (jwtRequestDAO.findJwtRequestByUsername(username).getUsername()!=null){
+       /* Para load from file
+       try {
+            BufferedReader reader = Files.newBufferedReader(Paths.get("users.txt", String.valueOf(StandardCharsets.UTF_8)));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }*/
+        if (jwtRequestDAO.findJwtRequestByUsername(username).getUsername()!=null){
             JwtRequest temp=jwtRequestDAO.findJwtRequestByUsername(username);
             return new User(temp.getUsername(), temp.getPassword(),
                     new ArrayList<>());

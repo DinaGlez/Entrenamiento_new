@@ -14,8 +14,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-
-
 public class Producto {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -25,12 +23,12 @@ public class Producto {
     @NotBlank(message = "El nombre no puede quedar en blanco")
     private String nombre;
     @NotNull(message = "El precio no puede ser nulo")
-    private float precio;
+    private double precio;
     @NotNull(message = "La cantidad no puede ser nula")
     private int cantidad;
 
 
-    @OneToMany(mappedBy = "Producto", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "Producto")
     private List<DetalleVenta> detalles=new ArrayList<>();
 
     @Override
