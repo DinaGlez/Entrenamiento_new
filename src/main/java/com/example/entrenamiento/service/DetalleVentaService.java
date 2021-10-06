@@ -12,6 +12,7 @@ public interface DetalleVentaService {
  List<DetalleVentaDTO> getDetalles(int idventa);
 // DetalleVenta convertToDetalleVenta(DetalleVentaDTO detalleVentaDTO);
  DetalleVentaDTO convertToDetalleVentaDTO(DetalleVenta detalleVenta);
+ DetalleVenta convertToDetalleVenta(DetalleVentaDTO detalleVentaDTO);
 
 
 

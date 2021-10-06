@@ -1,20 +1,20 @@
 package com.example.entrenamiento.service;
 
 import com.example.entrenamiento.DTO.DetalleVentaDTO;
-import com.example.entrenamiento.DTO.ProductoDTO;
-import com.example.entrenamiento.model.Producto;
-import com.example.entrenamiento.model.Venta;
 import com.example.entrenamiento.repository.ClienteDAO;
 import com.example.entrenamiento.model.Cliente;
 import com.example.entrenamiento.DTO.ClienteDTO;
+import com.zaxxer.hikari.util.DriverDataSource;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import javax.sql.DataSource;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.TimeZone;
 import java.util.stream.Collectors;
 
 @Service
@@ -32,7 +32,6 @@ public class ClienteServicioImpl implements ClienteService {
        clienteDTO.setDni(cliente.getDni());
        clienteDTO.setEmail(cliente.getEmail());
        clienteDTO.setTelefono(cliente.getTelefono());
-
        return clienteDTO;
     }
 

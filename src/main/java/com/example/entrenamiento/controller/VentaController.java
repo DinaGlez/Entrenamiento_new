@@ -25,11 +25,7 @@ public class VentaController {
 
         return ventaService.getVentas();
     }
-    /*@GetMapping("/ventaDetalle/{idventa}")
-    public List<DetalleVentaDTO> getVentaById(@PathVariable ("idventa")int idventa){
 
-        return ventaService.GetListaDetallleById(idventa);
-    }*/
     @GetMapping("/ventas/{idventa}")
     public VentaDTO getVenta(@PathVariable ("idventa")int idventa){
 
@@ -39,9 +35,7 @@ public class VentaController {
     @PostMapping("/ventas")
     public ResponseEntity<?> InsertVenta(@RequestBody VentaDTO venta){
        int id= ventaService.insertVenta(venta);
-
         return ResponseEntity.ok(ventaService.getVenta(id));
-
     }
 
 

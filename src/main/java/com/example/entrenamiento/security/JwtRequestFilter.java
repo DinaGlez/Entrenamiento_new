@@ -18,6 +18,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Date;
 
 @Component
 public class JwtRequestFilter extends OncePerRequestFilter {
@@ -33,8 +34,8 @@ public class JwtRequestFilter extends OncePerRequestFilter {
             throws ServletException, IOException {
 
         final String requestTokenHeader = request.getHeader("Authorization");
-        final Logger LOGGER = LogManager.getLogger(EntrenamientoApplication.class);
-
+        final Logger LOGGER = LogManager.getLogger("jwt");
+        Date date=new Date();
         String username = null;
         String jwtToken = null;
         // JWT Token is in the form "Bearer token". Remove Bearer word and get
@@ -45,15 +46,15 @@ public class JwtRequestFilter extends OncePerRequestFilter {
                 username = jwtTokenUtil.getUsernameFromToken(jwtToken);
             } catch (IllegalArgumentException e) {
                 //TODO: usar logs
-                LOGGER.error("Unable to get JWT Token");
+                LOGGER.error(date.toString()+"  Unable to get JWT Token" + "  "+ LOGGER.getLevel().toString());
 
             } catch (ExpiredJwtException e) {
                 //TODO: usar logs
-                LOGGER.error("JWT Token has expired");
+                LOGGER.error(date.toString()+ "  JWT Token has expired" + "  "+ LOGGER.getLevel().toString());
 
             }
         } else {
-            logger.warn("JWT Token does not begin with Bearer String");
+            logger.warn(date.toString()+" JWT Token does not begin with Bearer String");
         }
 
         // Once we get the token validate it.

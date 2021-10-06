@@ -71,4 +71,13 @@ public class DetalleVentaServicioImpl implements DetalleVentaService{
 
         return detalleVentaDTO;
     }
+
+    @Override
+    public DetalleVenta convertToDetalleVenta(DetalleVentaDTO detalleVentaDTO) {
+        modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
+        DetalleVenta detalleVenta=modelMapper.map(detalleVentaDTO, DetalleVenta.class);
+
+        return detalleVenta;
+    }
+
 }

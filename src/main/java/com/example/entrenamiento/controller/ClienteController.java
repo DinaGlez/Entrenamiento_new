@@ -3,6 +3,8 @@ package com.example.entrenamiento.controller;
 import com.example.entrenamiento.DTO.ClienteDTO;
 import com.example.entrenamiento.model.Cliente;
 import com.example.entrenamiento.service.ClienteService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +17,9 @@ public class ClienteController {
 
     @Autowired
     ClienteService clienteService;
+
+    private static final Logger LOG = LogManager.getLogger("cliente");
+
     @ResponseBody
     @GetMapping("/clientes")
     public List<ClienteDTO> getAll() {
@@ -24,6 +29,7 @@ public class ClienteController {
     @PostMapping("/clientes")
     public ResponseEntity<?> insertCliente(@RequestBody ClienteDTO cliente) {
       clienteService.AddCliente(cliente);
+      LOG.info("Insserción del cliente: "+ cliente.getNombre()+" "+cliente.getApellido());
        return ResponseEntity.ok(cliente);
     }
 

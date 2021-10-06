@@ -28,8 +28,8 @@ public class Producto {
     private int cantidad;
 
 
-    @OneToMany(mappedBy = "Producto")
-    private List<DetalleVenta> detalles=new ArrayList<>();
+ /*   @OneToMany(mappedBy = "Producto")
+    private List<DetalleVenta> detalles=new ArrayList<>();*/
 
     @Override
    public String toString() {

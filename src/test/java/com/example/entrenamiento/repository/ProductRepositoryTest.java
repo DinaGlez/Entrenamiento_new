@@ -32,7 +32,7 @@ public class ProductRepositoryTest {
         Producto producto = com.example.entrenamiento.model.Producto.builder()
                 .nombre("Mayonesa")
                //.idproducto(10)
-                .precio((float)2.2)
+                .precio(2.2)
                 .build();
 
         productoDAO.save(producto);

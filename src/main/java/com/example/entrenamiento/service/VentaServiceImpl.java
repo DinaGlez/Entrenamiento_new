@@ -11,7 +11,6 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.Date;
@@ -35,35 +34,40 @@ public class VentaServiceImpl implements VentaService {
     @Override
     @Transactional
     public int insertVenta(VentaDTO ventaDTO) {
-       Venta venta = convertToVenta(ventaDTO);
-
-       Venta savedVenta= AddVenta(venta);
-       //Obtengo la lista de DetalleVentaDTO que me da
-       ArrayList<DetalleVentaDTO> detalles= ventaDTO.getProductos();
-
-       detalles.stream().forEach(detalle->{
-
-           Producto prod= productoService.getProductoById(detalle.getIdproducto());
-           detalleVentaService.addDetalle(new DetalleVenta(null,detalle.getCantidad(),savedVenta,prod));
-           prod.setCantidad(prod.getCantidad()-detalle.getCantidad());
-           productoService.updateProducto(prod);
-
-
-    });
-                savedVenta.setImporte(ventaDTO.getProductos().stream().mapToDouble(detalle->{
-                    Producto producto =productoService.getProductoById(detalle.getIdproducto());
-                    return producto.getPrecio()*detalle.getCantidad();
-                }).sum());
-                ventaDAO.save(savedVenta);
-
-                return savedVenta.getIdventa();
-                  }
-
-    public Venta AddVenta(Venta venta){
         Date date = new Date();
-        venta.setFecha(date);
-        return ventaDAO.save(venta);
+        Venta venta = Venta.builder()
+                .fecha(date)
+                .cliente(clienteService.getClienteById(ventaDTO.getIdcliente()))
+                .build();
+
+        ventaDAO.save(venta);
+
+        ArrayList<DetalleVenta> detalles= new ArrayList<>();
+        ventaDTO.getProductos().stream().forEach(detalle->{
+            if(productoService.ifInventarioDisponible(detalle.getIdproducto(),detalle.getCantidad())){
+                Producto prod= productoService.getProductoById(detalle.getIdproducto());
+                detalles.add(new DetalleVenta(null,detalle.getCantidad(),venta, prod)) ;
+                prod.setCantidad(prod.getCantidad()-detalle.getCantidad());
+                productoService.updateProducto(prod);
+
+            }
+
+
+        });
+
+     venta.setDetalles(detalles);
+     venta.setImporte(calcImporte(detalles));
+
+     return venta.getIdventa();
     }
+    public double calcImporte(ArrayList<DetalleVenta> detalles){
+      double importe=  detalles.stream().mapToDouble(detalle->{
+            //Producto producto =productoService.getProductoById(detalle.getProducto().getIdproducto());
+            return detalle.getProducto().getPrecio()*detalle.getCantidad();
+        }).sum();
+       return importe;
+    }
+
     @Override
     public List<VentaDTO> getVentas() {
         return ((List<Venta>) ventaDAO
@@ -77,7 +81,6 @@ public class VentaServiceImpl implements VentaService {
 
     @Override
     public List<DetalleVentaDTO> GetListaDetallleById(int idventa) {
-        //return ((List<DetalleVentaDTO>) ventaDAO.findById(idventa).get().getDetalles().stream().map(detalleVentaService::convertToDetalleVentaDTO).collect(Collectors.toList())) ;
     return ventaDAO.findById(idventa).get().getDetalles().stream().map(detalleVentaService::convertToDetalleVentaDTO).collect(Collectors.toList());
     }
 
@@ -95,12 +98,6 @@ public class VentaServiceImpl implements VentaService {
         VentaDTO ventaDTO=modelMapper.map(venta, VentaDTO.class);
       ventaDTO.setProductos((ArrayList<DetalleVentaDTO>) venta.getDetalles().stream().map(detalleVentaService::convertToDetalleVentaDTO).collect(Collectors.toList()));
         return ventaDTO;
-    }
-    private Venta convertToVenta(VentaDTO ventaDTO) {
-        modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
-        Venta venta=modelMapper.map(ventaDTO, Venta.class);
-       venta.setCliente(clienteService.getClienteById(ventaDTO.getIdcliente()));
-        return venta;
     }
 
     }

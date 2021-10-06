@@ -2,30 +2,65 @@
 <Configuration status="WARN" monitorInterval="30">
     <Properties>
         <Property name="LOG_PATTERN">
-            %d{yyyy-MM-dd HH:mm:ss.SSS} %5p ${hostName} --- [%15.15t] %-40.40c{1.} : %m%n%ex
+            [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+
         </Property>
+        <Property name="log-path">logs</Property>
+
     </Properties>
     <Appenders>
-        <Console name="ConsoleAppender" target="SYSTEM_OUT" follow="true">
+        <Console name="ConsoleAppender" target="SYSTEM_OUT">
             <PatternLayout>
-                <Pattern>${LOG_PATTERN}</Pattern>
+                [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
             </PatternLayout>
         </Console>
-        <File name="FileAppender" fileName="appTraza.log">
+        <File name="ProductoAppender" fileName="${log-path}/producto.log">
             <PatternLayout>
-                <Pattern>${LOG_PATTERN}</Pattern>
+                [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+            </PatternLayout>
+        </File>
+        <File name="ClienteAppender" fileName="${log-path}/cliente.log">
+            <PatternLayout>
+                [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+            </PatternLayout>
+        </File>
+        <File name="VentaAppender" fileName="${log-path}/venta.log">
+            <PatternLayout>
+                [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+            </PatternLayout>
+        </File>
+        <File name="JWTAppender" fileName="${log-path}/jwt.log">
+            <PatternLayout>
+                [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
             </PatternLayout>
         </File>
     </Appenders>
     <Loggers>
-        <Logger name="entrenamiento" level="debug" additivity="false">
+        <Logger name="producto" level="info" additivity="false">
+            <AppenderRef ref="ProductoAppender" />
             <AppenderRef ref="ConsoleAppender" />
-            <AppenderRef ref="FileAppender" />
+
+        </Logger>
+
+        <Logger name="venta" level="info" additivity="false">
+            <AppenderRef ref="VentaAppender" />
+            <AppenderRef ref="ConsoleAppender" />
+
+        </Logger>
+
+        <Logger name="cliente" level="info" additivity="false">
+            <AppenderRef ref="ClienteAppender" />
+            <AppenderRef ref="ConsoleAppender" />
+
+        </Logger>
+        <Logger name="jwt" level="info" additivity="false">
+            <AppenderRef ref="JWTAppender" />
+            <AppenderRef ref="ConsoleAppender" />
+
         </Logger>
 
         <Root level="info">
             <AppenderRef ref="ConsoleAppender" />
-            <AppenderRef ref="FileAppender" />
-        </Root>
+                   </Root>
     </Loggers>
 </Configuration>

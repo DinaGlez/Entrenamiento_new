@@ -15,5 +15,5 @@ public interface ProductoService {
     List<ProductoDTO> getProductos();
     void updateProducto(int id,ProductoDTO producto);
     void updateProducto(Producto producto);
-
+    boolean ifInventarioDisponible(int idproducto,int cantidad);
 }

@@ -1,7 +1,7 @@
 package com.example.entrenamiento.service;
 
-import com.example.entrenamiento.DTO.VentaDTO;
-import com.example.entrenamiento.model.Venta;
+
+
 import com.example.entrenamiento.repository.ProductoDAO;
 import com.example.entrenamiento.model.Producto;
 import com.example.entrenamiento.DTO.ProductoDTO;
@@ -10,7 +10,7 @@ import org.modelmapper.convention.MatchingStrategies;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.ResponseBody;
+
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -74,6 +74,11 @@ public class ProductoServiceImpl implements ProductoService {
         productoDAO.save(producto);
     }
 
+    @Override
+    public boolean ifInventarioDisponible(int idproducto, int cantidad) {
+        return productoDAO.findById(idproducto).get().getCantidad()>=cantidad;
+    }
+
     private ProductoDTO convertToProductoDTO(Producto producto) {
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
         ProductoDTO productoDTO=modelMapper.map(producto,ProductoDTO.class);
@@ -85,4 +90,6 @@ public class ProductoServiceImpl implements ProductoService {
         Producto producto=modelMapper.map(productoDTO, Producto.class);
         return producto;
     }
+
+
 }

@@ -13,6 +13,8 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Venta {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -27,7 +29,7 @@ public class Venta {
     @OnDelete(action = OnDeleteAction.NO_ACTION)
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<DetalleVenta> detalles=new ArrayList<>();
 
     @Override
