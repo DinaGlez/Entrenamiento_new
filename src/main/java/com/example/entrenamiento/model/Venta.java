@@ -24,9 +24,9 @@ public class Venta {
 
     private double importe;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "idcliente", nullable = false)
-    @OnDelete(action = OnDeleteAction.NO_ACTION)
+    //@OnDelete(action = OnDeleteAction.NO_ACTION)
     private Cliente cliente;
 
     @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL, fetch = FetchType.EAGER)

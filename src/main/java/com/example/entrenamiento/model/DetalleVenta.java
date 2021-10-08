@@ -20,7 +20,7 @@ public class DetalleVenta {
     @NotNull(message = "La cantidad no puede se nula")
     private int cantidad;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "idventa", nullable = false)
     private Venta venta;
 

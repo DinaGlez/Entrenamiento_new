@@ -39,30 +39,33 @@ public class VentaServiceImpl implements VentaService {
                 .fecha(date)
                 .cliente(clienteService.getClienteById(ventaDTO.getIdcliente()))
                 .build();
-
         ventaDAO.save(venta);
 
+
         ArrayList<DetalleVenta> detalles= new ArrayList<>();
-        ventaDTO.getProductos().stream().forEach(detalle->{
-            if(productoService.ifInventarioDisponible(detalle.getIdproducto(),detalle.getCantidad())){
-                Producto prod= productoService.getProductoById(detalle.getIdproducto());
-                detalles.add(new DetalleVenta(null,detalle.getCantidad(),venta, prod)) ;
-                prod.setCantidad(prod.getCantidad()-detalle.getCantidad());
-                productoService.updateProducto(prod);
+        detalles= (ArrayList<DetalleVenta>) ventaDTO.getProductos()
+                .stream()
+                .map(detalle->{
+                     Producto prod =productoService.getProductoById(detalle.getIdproducto());
+                     int cant=(prod.getCantidad()-detalle.getCantidad())>0? (prod.getCantidad()-detalle.getCantidad()): 0  ;
 
-            }
+                    prod.setCantidad(cant==0? prod.getCantidad() : cant);
+                       return new DetalleVenta(null, cant!=0?detalle.getCantidad():0, venta, prod);
 
 
-        });
+                })
+                .collect(Collectors.toList());
 
-     venta.setDetalles(detalles);
-     venta.setImporte(calcImporte(detalles));
+
+
+
+    venta.setDetalles(detalles);
+    venta.setImporte(calcImporte(detalles));
 
      return venta.getIdventa();
     }
     public double calcImporte(ArrayList<DetalleVenta> detalles){
       double importe=  detalles.stream().mapToDouble(detalle->{
-            //Producto producto =productoService.getProductoById(detalle.getProducto().getIdproducto());
             return detalle.getProducto().getPrecio()*detalle.getCantidad();
         }).sum();
        return importe;
@@ -81,7 +84,7 @@ public class VentaServiceImpl implements VentaService {
 
     @Override
     public List<DetalleVentaDTO> GetListaDetallleById(int idventa) {
-    return ventaDAO.findById(idventa).get().getDetalles().stream().map(detalleVentaService::convertToDetalleVentaDTO).collect(Collectors.toList());
+        return ventaDAO.findById(idventa).get().getDetalles().stream().map(detalleVentaService::convertToDetalleVentaDTO).collect(Collectors.toList());
     }
 
     @Override
@@ -96,8 +99,9 @@ public class VentaServiceImpl implements VentaService {
     private VentaDTO convertToVentaDTO(Venta venta) {
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
         VentaDTO ventaDTO=modelMapper.map(venta, VentaDTO.class);
-      ventaDTO.setProductos((ArrayList<DetalleVentaDTO>) venta.getDetalles().stream().map(detalleVentaService::convertToDetalleVentaDTO).collect(Collectors.toList()));
+        ventaDTO.setProductos((ArrayList<DetalleVentaDTO>) venta.getDetalles().stream().map(detalleVentaService::convertToDetalleVentaDTO).collect(Collectors.toList()));
         return ventaDTO;
     }
 
-    }
+
+}
