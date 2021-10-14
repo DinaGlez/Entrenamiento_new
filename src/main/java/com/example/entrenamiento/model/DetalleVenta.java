@@ -1,11 +1,11 @@
 package com.example.entrenamiento.model;
 
 import lombok.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.util.Date;
-@Entity
+@Document
 @Getter
 @Setter
 @Builder
@@ -13,20 +13,16 @@ import java.util.Date;
 @AllArgsConstructor
 public class DetalleVenta {
 
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer idDetalleVenta;
 
-    @NotNull(message = "La cantidad no puede se nula")
     private int cantidad;
 
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JoinColumn(name = "idventa", nullable = false)
+    @DBRef(lazy = true)
     private Venta venta;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idproducto", nullable = false)
-    private Producto Producto;
+    //@DBRef(lazy = false)
+
+    //private Producto Producto;
 
 }

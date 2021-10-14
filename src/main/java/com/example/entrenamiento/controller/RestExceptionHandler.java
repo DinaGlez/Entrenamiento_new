@@ -2,7 +2,6 @@ package com.example.entrenamiento.controller;
 import com.example.entrenamiento.apierror.ApiError;
 import com.example.entrenamiento.apierror.EntityNotFoundException;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -11,8 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.http.converter.HttpMessageNotWritableException;
-import org.springframework.security.access.AccessDeniedException;
-import org.springframework.security.authentication.BadCredentialsException;
+
 import org.springframework.web.HttpMediaTypeNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
@@ -104,7 +102,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
      * @param ex the ConstraintViolationException
      * @return the ApiError object
      */
-    @ExceptionHandler(javax.validation.ConstraintViolationException.class)
+   /* @ExceptionHandler(javax.validation.ConstraintViolationException.class)
     protected ResponseEntity<Object> handleConstraintViolation(
             javax.validation.ConstraintViolationException ex) {
         ApiError apiError = new ApiError(BAD_REQUEST);
@@ -112,7 +110,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         apiError.addValidationErrors(ex.getConstraintViolations());
         return buildResponseEntity(apiError);
     }
-
+*/
     /**
      * Handles EntityNotFoundException. Created to encapsulate errors with more detail than javax.persistence.EntityNotFoundException.
      *
@@ -180,7 +178,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     /**
      * Handle javax.persistence.EntityNotFoundException
      */
-    @ExceptionHandler(javax.persistence.EntityNotFoundException.class)
+   /* @ExceptionHandler(javax.persistence.EntityNotFoundException.class)
     protected ResponseEntity<Object> handleEntityNotFound(javax.persistence.EntityNotFoundException ex) {
         return buildResponseEntity(new ApiError(HttpStatus.NOT_FOUND, ex));
     }
@@ -191,14 +189,14 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
      * @param ex the DataIntegrityViolationException
      * @return the ApiError object
      */
-    @ExceptionHandler(DataIntegrityViolationException.class)
+   /* @ExceptionHandler(DataIntegrityViolationException.class)
     protected ResponseEntity<Object> handleDataIntegrityViolation(DataIntegrityViolationException ex,
                                                                   WebRequest request) {
         if (ex.getCause() instanceof ConstraintViolationException) {
             return buildResponseEntity(new ApiError(HttpStatus.CONFLICT, "Database error", ex.getCause()));
         }
         return buildResponseEntity(new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, ex));
-    }
+    }*/
 
     /**
      * Handle Exception, handle generic Exception.class
@@ -219,7 +217,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     private ResponseEntity<Object> buildResponseEntity(ApiError apiError) {
         return new ResponseEntity<>(apiError, apiError.getStatus());
     }
-    @ExceptionHandler({ AccessDeniedException.class })
+   /* @ExceptionHandler({ AccessDeniedException.class })
     protected ResponseEntity<Object> handleAccessDeniedException(Exception ex, WebRequest request) {
         ApiError apiError = new ApiError(HttpStatus.FORBIDDEN);
         apiError.setMessage(String.format("Su usuario o contrasenna son incorrectos"));
@@ -234,7 +232,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         apiError.setDebugMessage(ex.getMessage());
         return buildResponseEntity(apiError);
 
-    }
+    }*/
     @ExceptionHandler({ HttpClientErrorException.class })
     protected ResponseEntity<Object> HttpClientErrorException(Exception ex, WebRequest request) {
         ApiError apiError = new ApiError(HttpStatus.UNAUTHORIZED);

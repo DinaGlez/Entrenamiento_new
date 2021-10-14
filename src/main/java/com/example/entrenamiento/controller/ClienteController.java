@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 public class ClienteController {
 
-    @Autowired
+  /*  @Autowired
     ClienteService clienteService;
 
     private static final Logger LOG = LogManager.getLogger("cliente");
@@ -53,6 +53,6 @@ public class ClienteController {
           throw new Exception("Imposible borrar cliente, tiene ventas asociadas", e.getCause());
       }
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    }
+    }*/
 
 }

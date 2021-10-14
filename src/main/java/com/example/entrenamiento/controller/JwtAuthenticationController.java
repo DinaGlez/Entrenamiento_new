@@ -1,25 +1,16 @@
 package com.example.entrenamiento.controller;
-import com.example.entrenamiento.model.JwtRequest;
-import com.example.entrenamiento.model.JwtResponse;
-import com.example.entrenamiento.security.JwtTokenUtil;
-import com.example.entrenamiento.service.JwtUserDetailsService;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
+//import com.example.entrenamiento.security.JwtTokenUtil;
+/*import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetails;*/
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Date;
 
 @RestController
 @CrossOrigin
 public class JwtAuthenticationController {
 
-    @Autowired
+  /*  @Autowired
     private AuthenticationManager authenticationManager;
 
     @Autowired
@@ -65,5 +56,5 @@ public class JwtAuthenticationController {
               throw new Exception("Su usuario o su contraseña no son correctos", e);
             }
 
-    }
+    }*/
 }

@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
@@ -12,6 +11,5 @@ import javax.validation.constraints.NotNull;
 
 public class DetalleVentaDTO {
     int idproducto;
-    @NotNull(message = "La existencia no puede ser nula")
     private int cantidad;
 }

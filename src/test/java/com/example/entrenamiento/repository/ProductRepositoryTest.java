@@ -9,7 +9,7 @@ import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.jdbc.core.JdbcTemplate;
+//import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.annotation.Rollback;
 
 import javax.sql.DataSource;
@@ -22,8 +22,7 @@ public class ProductRepositoryTest {
 
     @Autowired
     private ProductoDAO productoDAO;
-
-    // JUnit test for saveEmployee
+/*
     @Test
     @Order(1)
     @Rollback(value = false)
@@ -85,7 +84,6 @@ public class ProductRepositoryTest {
 
         productoDAO.delete(producto);
 
-        //employeeRepository.deleteById(1L);
 
         Producto producto1 = null;
 
@@ -97,5 +95,5 @@ public class ProductRepositoryTest {
 
         Assertions.assertThat(producto1).isNull();
     }
-
+*/
 }

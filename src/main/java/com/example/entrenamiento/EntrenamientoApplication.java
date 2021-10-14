@@ -1,13 +1,16 @@
 package com.example.entrenamiento;
 
+import com.mongodb.reactivestreams.client.MongoClient;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
+
+import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -23,10 +26,14 @@ public class EntrenamientoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(EntrenamientoApplication.class, args);
-		/*LOGGER.info("Info level log message");
-		LOGGER.debug("Debug level log message");
-		LOGGER.error("Error level log message");*/
 
+	}
+	@Autowired
+	MongoClient mongoClient;
+
+	@Bean
+	public ReactiveMongoTemplate reactiveMongoTemplate() {
+		return new ReactiveMongoTemplate(mongoClient, "test");
 	}
 
 }

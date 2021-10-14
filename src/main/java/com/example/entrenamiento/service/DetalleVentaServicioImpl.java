@@ -17,9 +17,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class DetalleVentaServicioImpl implements DetalleVentaService{
+public class DetalleVentaServicioImpl /*implements DetalleVentaService*/{
 
-    @Autowired
+  /*  @Autowired
     DetalleVentaDAO detalleVentaDAO;
     @Autowired
     VentaService ventaService;
@@ -31,7 +31,7 @@ public class DetalleVentaServicioImpl implements DetalleVentaService{
     private ModelMapper modelMapper;
 
 
-    public void addProducto(Venta venta, int idproducto) {
+   /* public void addProducto(Venta venta, int idproducto) {
         Producto prod=productoDAO.findById(idproducto).get();
 
         DetalleVenta detalleVenta = DetalleVenta.builder()
@@ -64,7 +64,7 @@ public class DetalleVentaServicioImpl implements DetalleVentaService{
         DetalleVenta detalleVenta=modelMapper.map(detalleVentaDTO, DetalleVenta.class);
 
         return detalleVenta;
-    }*/
+    }
     public DetalleVentaDTO convertToDetalleVentaDTO(DetalleVenta detalleVenta) {
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
         DetalleVentaDTO detalleVentaDTO=modelMapper.map(detalleVenta, DetalleVentaDTO.class);
@@ -79,5 +79,5 @@ public class DetalleVentaServicioImpl implements DetalleVentaService{
 
         return detalleVenta;
     }
-
+*/
 }

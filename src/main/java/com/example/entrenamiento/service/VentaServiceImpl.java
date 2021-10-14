@@ -11,15 +11,14 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-public class VentaServiceImpl implements VentaService {
-    @Autowired
+public class VentaServiceImpl /*implements VentaService*/ {
+    /*@Autowired
     VentaDAO ventaDAO;
     @Autowired
     ClienteService clienteService;
@@ -31,9 +30,9 @@ public class VentaServiceImpl implements VentaService {
     ProductoService productoService;
 
 
-    @Override
-    @Transactional
-    public int insertVenta(VentaDTO ventaDTO) {
+    //@Override
+   // @Transactional
+  /*  public int insertVenta(VentaDTO ventaDTO) {
         Date date = new Date();
         Venta venta = Venta.builder()
                 .fecha(date)
@@ -48,7 +47,7 @@ public class VentaServiceImpl implements VentaService {
                 .map(detalle->{
                      Producto prod =productoService.getProductoById(detalle.getIdproducto());
                      int cant=(prod.getCantidad()-detalle.getCantidad())>0? (prod.getCantidad()-detalle.getCantidad()): 0  ;
-
+                    //test
                     prod.setCantidad(cant==0? prod.getCantidad() : cant);
                        return new DetalleVenta(null, cant!=0?detalle.getCantidad():0, venta, prod);
 
@@ -103,5 +102,5 @@ public class VentaServiceImpl implements VentaService {
         return ventaDTO;
     }
 
-
+*/
 }

@@ -1,36 +1,31 @@
 package com.example.entrenamiento.model;
 
 import lombok.*;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@Entity
+@Document
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class Venta {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer idventa;
-    @NotNull
     private Date fecha;
 
     private double importe;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "idcliente", nullable = false)
-    //@OnDelete(action = OnDeleteAction.NO_ACTION)
+    @DBRef(lazy = false)
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<DetalleVenta> detalles=new ArrayList<>();
+    //@DBRef(lazy = false)
+   // private List<DetalleVenta> detalles=new ArrayList<>();
 
     @Override
     public String toString() {

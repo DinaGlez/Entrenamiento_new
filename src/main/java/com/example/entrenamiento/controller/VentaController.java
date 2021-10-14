@@ -15,7 +15,7 @@ import java.util.List;
 public class VentaController {
     private static final Logger LOGGER = LogManager.getLogger(VentaController.class);
 
-    @Autowired
+   /* @Autowired
     VentaService ventaService;
     @Autowired
     DetalleVentaService detalleVentaService;
@@ -37,7 +37,7 @@ public class VentaController {
        int id= ventaService.insertVenta(venta);
         return ResponseEntity.ok(ventaService.getVenta(id));
     }
-
+*/
 
 
 }

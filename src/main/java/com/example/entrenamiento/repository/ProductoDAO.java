@@ -1,9 +1,8 @@
 package com.example.entrenamiento.repository;
 
 import com.example.entrenamiento.model.Producto;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 
 
-public interface ProductoDAO extends CrudRepository<Producto, Integer> {
+public interface ProductoDAO extends ReactiveCrudRepository<Producto, Integer> {
 }

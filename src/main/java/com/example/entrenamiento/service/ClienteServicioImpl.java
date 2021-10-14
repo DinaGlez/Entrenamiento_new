@@ -4,7 +4,6 @@ import com.example.entrenamiento.DTO.DetalleVentaDTO;
 import com.example.entrenamiento.repository.ClienteDAO;
 import com.example.entrenamiento.model.Cliente;
 import com.example.entrenamiento.DTO.ClienteDTO;
-import com.zaxxer.hikari.util.DriverDataSource;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +17,8 @@ import java.util.TimeZone;
 import java.util.stream.Collectors;
 
 @Service
-public class ClienteServicioImpl implements ClienteService {
-    @Autowired
+public class ClienteServicioImpl /*implements ClienteService*/ {
+   /* @Autowired
     ClienteDAO clienteDAO;
 
     @Autowired
@@ -100,5 +99,5 @@ public class ClienteServicioImpl implements ClienteService {
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
         ClienteDTO clienteDTO=modelMapper.map(cliente,ClienteDTO.class);
         return clienteDTO;
-    }
+    }*/
 }
