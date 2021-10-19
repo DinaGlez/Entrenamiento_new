@@ -20,8 +20,8 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.context.request.ServletWebRequest;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
-import org.springframework.web.servlet.NoHandlerFoundException;
-import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+//import org.springframework.web.servlet.NoHandlerFoundException;
+//import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.NoSuchElementException;
@@ -29,10 +29,10 @@ import java.util.NoSuchElementException;
 import static org.springframework.http.HttpStatus.*;
 
 
-@Order(Ordered.HIGHEST_PRECEDENCE)
+/*@Order(Ordered.HIGHEST_PRECEDENCE)
 @ControllerAdvice
-@Slf4j
-public class RestExceptionHandler extends ResponseEntityExceptionHandler {
+@Slf4j*/
+public class RestExceptionHandler /*extends ResponseEntityExceptionHandler */{
 
     /**
      * Handle MissingServletRequestParameterException. Triggered when a 'required' request parameter is missing.
@@ -43,7 +43,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
      * @param request WebRequest
      * @return the ApiError object
      */
-    @Override
+   /* @Override
     protected ResponseEntity<Object> handleMissingServletRequestParameter(
             MissingServletRequestParameterException ex, HttpHeaders headers,
             HttpStatus status, WebRequest request) {
@@ -61,7 +61,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
      * @param request WebRequest
      * @return the ApiError object
      */
-    @Override
+   /* @Override
     protected ResponseEntity<Object> handleHttpMediaTypeNotSupported(
             HttpMediaTypeNotSupportedException ex,
             HttpHeaders headers,
@@ -83,7 +83,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
      * @param request WebRequest
      * @return the ApiError object
      */
-    @Override
+    /*@Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(
             MethodArgumentNotValidException ex,
             HttpHeaders headers,
@@ -117,7 +117,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
      * @param ex the EntityNotFoundException
      * @return the ApiError object
      */
-    @ExceptionHandler(EntityNotFoundException.class)
+   /* @ExceptionHandler(EntityNotFoundException.class)
     protected ResponseEntity<Object> handleEntityNotFound(
             EntityNotFoundException ex) {
         ApiError apiError = new ApiError(NOT_FOUND);
@@ -134,7 +134,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
      * @param request WebRequest
      * @return the ApiError object
      */
-    @Override
+   /* @Override
     protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
         ServletWebRequest servletWebRequest = (ServletWebRequest) request;
         log.info("{} to {}", servletWebRequest.getHttpMethod(), servletWebRequest.getRequest().getServletPath());
@@ -151,7 +151,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
      * @param request WebRequest
      * @return the ApiError object
      */
-    @Override
+   /* @Override
     protected ResponseEntity<Object> handleHttpMessageNotWritable(HttpMessageNotWritableException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
         String error = "Error writing JSON output";
         return buildResponseEntity(new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, error, ex));
@@ -166,7 +166,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
      * @param request
      * @return
      */
-    @Override
+  /*  @Override
     protected ResponseEntity<Object> handleNoHandlerFoundException(
             NoHandlerFoundException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
         ApiError apiError = new ApiError(BAD_REQUEST);
@@ -204,7 +204,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
      * @param ex the Exception
      * @return the ApiError object
      */
-    @ExceptionHandler(MethodArgumentTypeMismatchException.class)
+   /* @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     protected ResponseEntity<Object> handleMethodArgumentTypeMismatch(MethodArgumentTypeMismatchException ex,
                                                                       WebRequest request) {
         ApiError apiError = new ApiError(BAD_REQUEST);
@@ -233,7 +233,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         return buildResponseEntity(apiError);
 
     }*/
-    @ExceptionHandler({ HttpClientErrorException.class })
+   /* @ExceptionHandler({ HttpClientErrorException.class })
     protected ResponseEntity<Object> HttpClientErrorException(Exception ex, WebRequest request) {
         ApiError apiError = new ApiError(HttpStatus.UNAUTHORIZED);
         apiError.setMessage(String.format("Su token ha expirado"));
@@ -256,5 +256,5 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         apiError.setDebugMessage(ex.getMessage());
         return buildResponseEntity(apiError);
 
-    }
+    }*/
 }

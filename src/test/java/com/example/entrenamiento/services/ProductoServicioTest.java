@@ -7,7 +7,7 @@ import com.example.entrenamiento.model.Producto;
 import com.example.entrenamiento.repository.ProductoDAO;
 
 
-import com.example.entrenamiento.service.ProductoServiceImpl;
+import com.example.entrenamiento.service.Impl.ProductoServiceImpl;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;

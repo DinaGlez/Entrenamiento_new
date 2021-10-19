@@ -1,5 +1,6 @@
-package com.example.entrenamiento.repository;
+package com.example.entrenamiento.repository.Impl;
 
+import com.example.entrenamiento.repository.DetalleVentaDAO;
 import org.springframework.stereotype.Repository;
 
 @Repository

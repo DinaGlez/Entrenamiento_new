@@ -1,4 +1,4 @@
-package com.example.entrenamiento.service;
+package com.example.entrenamiento.service.Impl;
 
 import com.example.entrenamiento.DTO.DetalleVentaDTO;
 import com.example.entrenamiento.repository.ClienteDAO;

@@ -1,20 +1,6 @@
-package com.example.entrenamiento.service;
+package com.example.entrenamiento.service.Impl;
 
-import com.example.entrenamiento.DTO.DetalleVentaDTO;
-import com.example.entrenamiento.DTO.ProductoDTO;
-import com.example.entrenamiento.model.DetalleVenta;
-import com.example.entrenamiento.model.Producto;
-import com.example.entrenamiento.model.Venta;
-import com.example.entrenamiento.repository.DetalleVentaDAO;
-import com.example.entrenamiento.repository.ProductoDAO;
-import com.example.entrenamiento.repository.ProductoDaoImpl;
-import com.example.entrenamiento.repository.VentaDAO;
-import org.modelmapper.ModelMapper;
-import org.modelmapper.convention.MatchingStrategies;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class DetalleVentaServicioImpl /*implements DetalleVentaService*/{
