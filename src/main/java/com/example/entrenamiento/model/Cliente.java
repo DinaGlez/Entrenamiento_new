@@ -20,7 +20,7 @@ import java.io.Serializable;
 @Builder
     public class Cliente implements  Serializable {
         @Id
-        private Integer idcliente;
+        private String idcliente;
         private String nombre;
         private String apellido;
         private String dni;

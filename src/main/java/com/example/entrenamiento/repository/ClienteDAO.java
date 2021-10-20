@@ -5,10 +5,14 @@ import com.example.entrenamiento.DTO.DetalleVentaDTO;
 import com.example.entrenamiento.model.Cliente;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
+import reactor.core.publisher.Flux;
 
 import java.util.List;
 
 
-public interface ClienteDAO extends ReactiveCrudRepository<Cliente,Integer> {
+public interface ClienteDAO extends ReactiveCrudRepository<Cliente,String> {
+
+   Flux<Cliente> findByNombre(final String name);
+
 
    }

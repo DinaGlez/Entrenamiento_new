@@ -8,6 +8,7 @@ import com.example.entrenamiento.DTO.ProductoDTO;
 
 
 import com.example.entrenamiento.service.ProductoService;
+import com.example.entrenamiento.utils.AppUtils;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,23 +21,30 @@ public class ProductoServiceImpl implements ProductoService {
     ProductoDAO productoDAO;
 
  @Override
- public Flux<Producto> getAll() {
-     return productoDAO.findAll();
+ public Flux<ProductoDTO> getAll() {
+     return productoDAO.findAll().map(AppUtils::entityToDTO);
  }
 
     @Override
-    public Mono<Producto> getById(int idproducto) {
-        return productoDAO.findById(idproducto);
+    public Mono<ProductoDTO> getById(String idproducto) {
+
+     return productoDAO.findById(idproducto).map(AppUtils::entityToDTO);
     }
 
     @Override
-    public Mono<Producto> save(Producto producto) {
-        return productoDAO.save(producto);
+    public Mono<ProductoDTO> save(Mono<ProductoDTO> productoDTO) {
+        return productoDTO.map(AppUtils::DTOtoEntity)
+            .flatMap(productoDAO::save)
+             .map(AppUtils::entityToDTO);
+
     }
 
     @Override
-    public Mono<Producto> update(Producto producto) {
-        return productoDAO.save(producto);
+    public Mono<ProductoDTO> update(Mono<ProductoDTO> productoDTO,String id ) {
+        return productoDAO.findById(id).flatMap(p->productoDTO.map(AppUtils::DTOtoEntity))
+                .doOnNext(e -> e.setIdproducto(id))
+                .flatMap(productoDAO::save)
+                .map(AppUtils::entityToDTO);
     }
 
 }

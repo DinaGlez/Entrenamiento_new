@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Builder
 public class Producto {
     @Id
-    private Integer idproducto;
+    private String idproducto;
     private String nombre;
     private double precio;
     private int cantidad;

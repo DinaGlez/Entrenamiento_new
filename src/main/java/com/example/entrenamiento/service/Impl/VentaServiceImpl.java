@@ -1,106 +1,47 @@
 package com.example.entrenamiento.service.Impl;
 
 
-import com.example.entrenamiento.DTO.DetalleVentaDTO;
 import com.example.entrenamiento.DTO.VentaDTO;
-import com.example.entrenamiento.model.DetalleVenta;
-import com.example.entrenamiento.model.Producto;
 import com.example.entrenamiento.repository.*;
-import com.example.entrenamiento.model.Venta;
-import org.modelmapper.ModelMapper;
-import org.modelmapper.convention.MatchingStrategies;
+import com.example.entrenamiento.service.VentaService;
+import com.example.entrenamiento.utils.AppUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.stream.Collectors;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
-@Component
-public class VentaServiceImpl /*implements VentaService*/ {
-    /*@Autowired
+@Service
+@Transactional
+public class VentaServiceImpl implements VentaService{
+    @Autowired
     VentaDAO ventaDAO;
-    @Autowired
-    ClienteService clienteService;
-    @Autowired
-    DetalleVentaService detalleVentaService;
-    @Autowired
-    private ModelMapper modelMapper;
-    @Autowired
-    ProductoService productoService;
 
-
-    //@Override
-   // @Transactional
-  /*  public int insertVenta(VentaDTO ventaDTO) {
-        Date date = new Date();
-        Venta venta = Venta.builder()
-                .fecha(date)
-                .cliente(clienteService.getClienteById(ventaDTO.getIdcliente()))
-                .build();
-        ventaDAO.save(venta);
-
-
-        ArrayList<DetalleVenta> detalles= new ArrayList<>();
-        detalles= (ArrayList<DetalleVenta>) ventaDTO.getProductos()
-                .stream()
-                .map(detalle->{
-                     Producto prod =productoService.getProductoById(detalle.getIdproducto());
-                     int cant=(prod.getCantidad()-detalle.getCantidad())>0? (prod.getCantidad()-detalle.getCantidad()): 0  ;
-                    //test
-                    prod.setCantidad(cant==0? prod.getCantidad() : cant);
-                       return new DetalleVenta(null, cant!=0?detalle.getCantidad():0, venta, prod);
-
-
-                })
-                .collect(Collectors.toList());
-
-
-
-
-    venta.setDetalles(detalles);
-    venta.setImporte(calcImporte(detalles));
-
-     return venta.getIdventa();
-    }
-    public double calcImporte(ArrayList<DetalleVenta> detalles){
-      double importe=  detalles.stream().mapToDouble(detalle->{
-            return detalle.getProducto().getPrecio()*detalle.getCantidad();
-        }).sum();
-       return importe;
+    @Override
+    public Flux<VentaDTO> getAll() {
+        return ventaDAO.findAll().map(AppUtils::entityToDTO);
     }
 
     @Override
-    public List<VentaDTO> getVentas() {
-        return ((List<Venta>) ventaDAO
-                .findAll())
-                .stream()
-                .map(this::convertToVentaDTO)
-                .collect(Collectors.toList());
-    }
+        public Mono<VentaDTO> getById(int idventa) {
 
+             return ventaDAO.findById(idventa).map(AppUtils::entityToDTO);
+          }
 
+        @Override
+        public Mono<VentaDTO> save(Mono<VentaDTO> productoDTO) {
+            return productoDTO.map(AppUtils::DTOtoEntity)
+                    .flatMap(ventaDAO::save)
+                    .map(AppUtils::entityToDTO);
 
-    @Override
-    public List<DetalleVentaDTO> GetListaDetallleById(int idventa) {
-        return ventaDAO.findById(idventa).get().getDetalles().stream().map(detalleVentaService::convertToDetalleVentaDTO).collect(Collectors.toList());
-    }
+        }
 
-    @Override
-    public VentaDTO getVenta(int idventa) {
-        VentaDTO ventaDTO=modelMapper.map(ventaDAO.findById(idventa).get(),VentaDTO.class) ;
-        ventaDTO.setProductos((ArrayList<DetalleVentaDTO>)GetListaDetallleById(idventa));
+        @Override
+        public Mono<VentaDTO> update(Mono<VentaDTO> ventaDTOMono,int id ) {
+            return ventaDAO.findById(id).flatMap(p->ventaDTOMono.map(AppUtils::DTOtoEntity))
+                    .doOnNext(e -> e.setIdventa(id))
+                    .flatMap(ventaDAO::save)
+                    .map(AppUtils::entityToDTO);
+        }
 
-        return ventaDTO;
-    }
-
-
-    private VentaDTO convertToVentaDTO(Venta venta) {
-        modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
-        VentaDTO ventaDTO=modelMapper.map(venta, VentaDTO.class);
-        ventaDTO.setProductos((ArrayList<DetalleVentaDTO>) venta.getDetalles().stream().map(detalleVentaService::convertToDetalleVentaDTO).collect(Collectors.toList()));
-        return ventaDTO;
-    }
-
-*/
 }

@@ -51,11 +51,11 @@ public class ProductoServicioTest {
 
         productList = new ArrayList<>();
         productDTOList = new ArrayList<>();
-        product1 = new Producto(1, "bread",2.2,20);
-        product1.setIdproducto(1);
+        product1 = new Producto("1", "bread",2.2,20);
+        product1.setIdproducto("1");
         product1.setNombre("butter");
         product1.setCantidad(100);
-        product2 = new Producto(2, "jam",2.2,200);
+        product2 = new Producto("2", "jam",2.2,200);
         productDTO1= new ProductoDTO("bread",2.2,20);
         productoDTO.setNombre("butter");
         productDTO2= new ProductoDTO("jam",2.2,200);
